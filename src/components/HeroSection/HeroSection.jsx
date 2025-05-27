@@ -7,7 +7,7 @@ export default function HeroSection() {
   return (
     <section
       className={styles.hero}
-      style={{ backgroundImage: `url(${heroBackground})` }}
+      style={{ backgroundImage: `url(${heroBackground})`, paddingTop: '80px' }}
     >
       <div className="container">
         <div className={styles.wrapper}>

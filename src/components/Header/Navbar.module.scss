@@ -3,16 +3,25 @@
 
 
 .navbar {
-  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 999;
+  padding: 15px 0;
   border-bottom: 1px solid #eaeaea;
-  padding: 16px 0;
+
+  // можно добавить тень при скролле
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 
   .container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
   }
 }
+
 
 .navbarInner {
   display: flex;

@@ -1,0 +1,46 @@
+.partners {
+    padding: 80px 0;
+    text-align: center;
+    
+  
+    .label {
+      color: #00e0c3;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      font-family: var(--second-family);
+    }
+  
+    .title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 32px;
+      font-family: var(--second-family);
+    }
+  
+    .slider {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f3f7fb;
+      padding: 60px 80px;
+      border-radius: 12px;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+  
+    .logoBox {
+      flex: 1 1 100px;
+      display: flex;
+      justify-content: center;
+     
+  
+      img {
+        max-height: 48px;
+        max-width: 161px;
+        object-fit: contain;
+      }
+    }
+  }
+  
