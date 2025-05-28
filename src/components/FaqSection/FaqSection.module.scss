@@ -1,0 +1,104 @@
+.faq {
+    padding: 80px 0;
+    background: #fff;
+  
+ 
+  }
+  
+  .label {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  
+  .title {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.5;
+  }
+  
+  .accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  
+    .item {
+      background: #f3f7fb;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: background-color 0.4s;
+  
+      &.open {
+        background: #e3f3ed;
+      }
+  
+      .header {
+        width: 100%;
+        padding: 16px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 600;
+        color: #111;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+      }
+  
+      .icon {
+        width: 22px;
+        height: 22px;
+        display: inline-block;
+        transition: transform 0.3s;
+  
+        &.down {
+          mask: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23000' d='M7 10l5 5 5-5z'/></svg>")
+            center / contain no-repeat;
+          background-color: #333;
+        }
+  
+        &.up {
+          mask: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23000' d='M7 14l5-5 5 5z'/></svg>")
+            center / contain no-repeat;
+          background-color: #333;
+        }
+      }
+  
+      .panel {
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        p {
+          padding: 0 20px 16px;
+          margin: 0;
+          font-size: 15px;
+          color: #333;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+  
+  /* Адаптив */
+  @media (max-width: 768px) {
+    .accordion .item .header {
+      padding: 12px 16px;
+      font-size: 15px;
+    }
+    .accordion .item .panel p {
+      padding: 0 16px 12px;
+    }
+  }
+  

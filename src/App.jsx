@@ -7,7 +7,7 @@ import './styles/main.scss'
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
+      
       <AppRoutes />
     </BrowserRouter>
   );

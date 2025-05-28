@@ -1,0 +1,164 @@
+.footer {
+    background: #f3f7fb;
+    padding: 60px 0 40px;
+    font-family: var(--font-family);
+  
+    .top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      max-width: 1240px;
+      margin: 0 auto 40px;
+      padding: 0 15px;
+    }
+  
+    .brand {
+      flex: 0 0 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  
+      .logo {
+        width: 140px;
+        margin-bottom: 24px;
+      }
+  
+      .subscribe {
+        display: flex;
+        width: 100%;
+        margin-bottom: 12px;
+  
+        .input {
+          flex: 1;
+          padding: 10px 14px;
+          border-radius: 8px 0 0 8px;
+          border: 1px solid #ccc;
+          font-size: 14px;
+          outline: none;
+        }
+  
+        .button {
+          padding: 10px 20px;
+          background: #0b0e4e;
+          color: #fff;
+          border: none;
+          border-radius: 0 8px 8px 0;
+          cursor: pointer;
+          font-size: 14px;
+          font-weight: 600;
+          transition: background 0.3s;
+  
+          &:hover {
+            background: #090c3b;
+          }
+        }
+      }
+  
+      .note {
+        font-size: 13px;
+        color: #777;
+        line-height: 1.4;
+      }
+    }
+  
+    .column {
+      flex: 1;
+      min-width: 180px;
+  
+      h4 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: #111;
+      }
+  
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+  
+        li {
+          margin-bottom: 8px;
+          display: flex;
+          align-items: center;
+  
+          a {
+            color: #555;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+  
+            &:hover {
+              color: #0b0e4e;
+            }
+          }
+  
+          .icon {
+            margin-right: 8px;
+            color: #0b0e4e;
+          }
+        }
+      }
+  
+      &.contactList li {
+        margin-bottom: 16px;
+      }
+    }
+  
+    .bottom {
+      border-top: 1px solid #ddd;
+      padding-top: 16px;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 15px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+  
+      p {
+        font-size: 13px;
+        color: #777;
+      }
+  
+      .social {
+        display: flex;
+        gap: 16px;
+  
+        a {
+          color: #555;
+          font-size: 18px;
+          transition: color 0.3s;
+  
+          &:hover {
+            color: #0b0e4e;
+          }
+        }
+      }
+    }
+  }
+  
+  /* Адаптив */
+  @media (max-width: 768px) {
+    .footer {
+      .top {
+        justify-content: center;
+        text-align: center;
+  
+        .brand {
+          align-items: center;
+        }
+  
+        .column {
+          min-width: 140px;
+        }
+      }
+  
+      .bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+  }
+  
