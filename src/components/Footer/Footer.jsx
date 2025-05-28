@@ -17,7 +17,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.top}>
         <div className={styles.brand}>
-        <img src={footerLogo``} alt="Ameen Group" className={styles.logo} />
+        <img src={footerLogo} alt="Ameen Group" className={styles.logo} />
           <form className={styles.subscribe}>
             <input
               type="tel"
