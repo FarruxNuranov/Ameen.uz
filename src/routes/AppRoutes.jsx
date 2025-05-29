@@ -9,7 +9,7 @@ export default function AppRoutes() {
   return (
     <Routes>
     <Route path="/" element={<Home />} />
-    <Route path="/Courses" element={<SingleCoursesPage />} />
+    <Route path="/courses" element={<SingleCoursesPage />} />
     </Routes>
   );
 }
