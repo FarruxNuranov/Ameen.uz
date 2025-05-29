@@ -17,3 +17,8 @@ export { default as freeCourses4 } from '../assets/Image/FreeCourses/freeCurs4.p
 export { default as googlePlay } from '../assets/Image/Download/GooglePlay.svg'
 export { default as qrPhone } from '../assets/Image/Download/qrcodee.svg'
 export { default as footerLogo } from '../assets/Image/Footer/AmeenFooterLogo.svg'
+export { default as RQ1 } from '../assets/Image/QrCourses/RQ1.png'
+export { default as RQ2 } from '../assets/Image/QrCourses/RQ2.png'
+export { default as RQ3 } from '../assets/Image/QrCourses/RQ3.png'
+export { default as RQ4 } from '../assets/Image/QrCourses/RQ4.png'
+export { default as vie1 } from '../assets/Image/CourseOverview/vie1.png'

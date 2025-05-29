@@ -1,0 +1,102 @@
+.overview {
+    padding: 80px 0;
+    background: #fff;
+    text-align: center;
+
+    .container {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+}
+
+.label {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #17b365;
+    margin-bottom: 8px;
+    padding-left: 40px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 32px;
+        height: 2px;
+        background-color: #00c78c;
+    }
+}
+
+.title {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 144%;
+    text-align: center;
+    color: #182f43;
+    margin-top: 16px;
+    margin-bottom: 36px;
+}
+
+.videoWrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    justify-items: center;
+    margin-bottom: 24px;
+
+    .video {
+        position: relative;
+        grid-column: 3 / span 8;
+        /* колонки 3–10 */
+        width: 100%;
+        max-width: 960px;
+        border-radius: 12px;
+        overflow: hidden;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .playBtn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(11, 14, 78, 0.8);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 72px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            cursor: pointer;
+            transition: background 0.3s;
+
+            &:hover {
+                background: rgba(11, 14, 78, 1);
+            }
+        }
+    }
+}
+
+.desc {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    text-align: center;
+    color: #182f43;
+    max-width: 579px;
+    margin: 0 auto;
+    width: 100%;
+}

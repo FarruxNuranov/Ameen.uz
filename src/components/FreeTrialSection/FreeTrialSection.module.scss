@@ -1,0 +1,133 @@
+.freeTrial {
+    padding: 90px 0;
+    background: #fff;
+    text-align: center;
+
+    .container {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .grid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .playWrapper {
+        grid-column: 1 / span 2;
+        display: flex;
+        justify-content: center;
+
+        .playBtn {
+            background: #0b0e4e;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 78px;
+            height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background 0.3s;
+
+            &:hover {
+                background: #090c3b;
+            }
+        }
+    }
+
+    .textBlock {
+        grid-column: 3 / span 7;
+        text-align: left;
+
+        .title {
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 38px;
+            line-height: 137%;
+            text-align: center;
+            color: #182f43;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 167%;
+            text-align: center;
+            color: #182f43;
+        }
+    }
+
+    .ctaWrapper {
+        grid-column: 10 / span 3;
+        display: flex;
+        justify-content: flex-end;
+
+        .ctaBtn {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 24px;
+            font-family: var(--font-family);
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 167%;
+            text-align: center;
+            color: #fff;
+            gap: 8px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.3s;
+
+            svg {
+                font-size: 18px;
+            }
+
+            &:hover {
+                background: #090c3b;
+            }
+        }
+    }
+
+    /* Адаптив */
+    @media (max-width: 992px) {
+        .playWrapper {
+            grid-column: 1 / span 3;
+        }
+
+        .textBlock {
+            grid-column: 4 / span 6;
+        }
+
+        .ctaWrapper {
+            grid-column: 10 / span 3;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .playWrapper,
+        .ctaWrapper {
+            justify-content: center;
+        }
+
+        .textBlock {
+            text-align: center;
+            grid-column: auto;
+        }
+    }
+}
