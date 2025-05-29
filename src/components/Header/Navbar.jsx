@@ -30,7 +30,7 @@ export default function Navbar() {
           </Link>
 
           <nav className={styles.navLinks}>
-            <NavLink >Kurslar</NavLink>
+            <NavLink to={"/courses"} target="_blank" >Kurslar</NavLink>
             <NavLink >Aloqa</NavLink>
             <NavLink >Biz haqimizda</NavLink>
             <NavLink >Narxlar</NavLink>

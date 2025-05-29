@@ -12,7 +12,7 @@ export default function CourseOverviewSection() {
 
         <div className={styles.videoWrapper}>
           <div className={styles.video}>
-            {/* сюда можешь вставить iframe или <video> */}
+           
             <img
               src={vie1} 
               alt="Course preview"
