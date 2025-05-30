@@ -7,6 +7,7 @@ import {
   FiChevronUp,
 } from 'react-icons/fi';
 import styles from './CourseCurriculumSection.module.scss';
+import { failmini, playmini } from '../../utils/getImage';
 
 const curriculum = [
   {
@@ -40,8 +41,32 @@ const curriculum = [
     points: [
       'Missiyani shakllantirish',
       'Strategik rejalar tuzish',
-      'Uzun muddatli maqsadlarni belgilash',
-      'Qadriyatlarni xodimlarga singdirish',
+      
+     
+    ],
+  },
+  {
+    title: 'HR rejalashtirish va Tashkiliy Tuzilma',
+    duration: '9–10 haftalar',
+    lessons: '6 darslar',
+    points: [
+      'HR byudjetini rejalashtirish',
+      'Tashkiliy tuzilmani loyihalash',
+      'Vakansiyalarni aniqlash',
+      'Xodimlarni tekshiruv',
+      'Hisobot va tahlil',
+    ],
+  },
+  {
+    title: 'HR rejalashtirish va Tashkiliy Tuzilma',
+    duration: '9–10 haftalar',
+    lessons: '6 darslar',
+    points: [
+      'HR byudjetini rejalashtirish',
+      'Tashkiliy tuzilmani loyihalash',
+      'Vakansiyalarni aniqlash',
+      'Xodimlarni tekshiruv',
+      'Hisobot va tahlil',
     ],
   },
   {
@@ -71,11 +96,11 @@ export default function CourseCurriculumSection() {
           <h2 className={styles.title}>O‘quv dastur</h2>
           <ul className={styles.features}>
             <li>
-              <FiPlay className={styles.icon} />
+               <img className={styles.icon} src={playmini} alt="" />
               <span>12 dars</span>
             </li>
             <li>
-              <FiPlay className={styles.icon} />
+            <img className={styles.icon} src={failmini} alt="" />
               <span>80 % kurs — amaliyot</span>
             </li>
           </ul>
