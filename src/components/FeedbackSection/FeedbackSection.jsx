@@ -8,39 +8,39 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { freeCourses1 } from '../../utils/getImage';
+import {  image1, image2, image3, image4, image5, image6 } from '../../utils/getImage';
 import { FiArrowLeft, FiArrowRight, FiX } from 'react-icons/fi';
 
 const feedbacks = [
   {
-    image: freeCourses1,
-    text: "Namuna development HR menejerining kursimiz haqidagi fikrlari",
+    image: image1,
+    
     videoId: 'z4o1f_LNYlM',
   },
   {
-    image: freeCourses1,
-    text: "O'zbekistondagi kompaniyalarda nega HR sistema yo'lga qo'yilishi kerak?",
+    image: image2,
+  
     videoId: 'o4tbI1xOa5o',
   },
   {
-    image: freeCourses1,
-    text: "Buxorolik HR menejer lavozimidagi o'quvchimizning kursimiz haqidagi fikrlari",
+    image: image3,
+   
     videoId: 'mkvA5gWM0uU',
   },
   {
-    image: freeCourses1,
-    text: "Media park HR menejerining kursimiz halide fikrlari",
+    image: image4,
+    
     videoId: 'Jaj9WHXOEro',
   },
   {
-    image: freeCourses1,
-    text: "Ushbu professional kursni barchan biznes egalariga tavsiya qilaman",
+    image: image5,
+   
     videoId: 'S-bfHCYSd9s',
   },
   {
-    image: freeCourses1,
-    text: "Kurs metodikasi juda tushunarli va amaliy",
-    videoId: 'Zi_XLOBDo_Y',
+    image: image6,
+   
+    videoId: 'O1n-6JxSShI',
   },
 ];
 

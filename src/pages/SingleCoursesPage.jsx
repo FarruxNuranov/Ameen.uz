@@ -1,34 +1,75 @@
-import React from 'react'
-import Navbar from '../components/Header/HomeNavbar/Navbar'
-import Footer from '../components/Footer/Footer'
-import DownloadSection from '../components/DownloadSection/DownloadSection'
-import FeedbackSection from '../components/FeedbackSection/FeedbackSection'
+// src/pages/SingleCoursesPage.jsx
+import React from 'react';
+import HrNavbar from '../components/Header/SingleHrNavbar/HrNavbar';
+import HRCourseSection from '../components/HRCourseSection/HRCourseSection';
+import FreeTrialSection from '../components/FreeTrialSection/FreeTrialSection';
+import CourseOverviewSection from '../components/CourseOverviewSection/CourseOverviewSection';
+import CourseCurriculumSection from '../components/CourseCurriculumSection/CourseCurriculumSection';
+import TeachersSection from '../components/TeachersSection/TeachersSection';
 import PartnersSection from '../components/PartnersSection/PartnersSection';
-import HRCourseSection from '../components/HRCourseSection/HRCourseSection'
-import FreeTrialSection from '../components/FreeTrialSection/FreeTrialSection'
-import CourseOverviewSection from '../components/CourseOverviewSection/CourseOverviewSection'
+import PricingSection from '../components/PricingSection/PricingSection';
+import FeedbackSection from '../components/FeedbackSection/FeedbackSection';
+import DownloadSection from '../components/DownloadSection/DownloadSection';
+import Footer from '../components/Footer/Footer';
 
-import TeachersSection from '../components/TeachersSection/TeachersSection'
-import PricingSection from '../components/PricingSection/PricingSection'
-import HrNavbar from '../components/Header/SingleHrNavbar/HrNavbar'
-import CourseCurriculumSection from '../components/CourseCurriculumSection/CourseCurriculumSection'
-
-const SingleCoursesPage = () => {
+export default function SingleCoursesPage() {
   return (
     <>
+      {/* Навигация по единственному курсу */}
+      <section id="navbarHR">
+
       <HrNavbar />
-      <HRCourseSection />
-      <FreeTrialSection />
-      <CourseOverviewSection />
-      <CourseCurriculumSection/>
-      <TeachersSection />
-      <PartnersSection />
-      <PricingSection />
-      <FeedbackSection />
-      <DownloadSection />
+      </section>
+
+
+      {/* Детали курса */}
+      
+      <section id="course-details">
+        <HRCourseSection />
+      </section>
+
+      {/* Бесплатный пробный урок */}
+      <section id="free-trial">
+        <FreeTrialSection />
+      </section>
+
+      {/* Обзор курса */}
+      <section id="overview">
+        <CourseOverviewSection />
+      </section>
+
+      {/* Учебная программа */}
+      <section id="curriculum">
+        <CourseCurriculumSection />
+      </section>
+
+      {/* Преподаватели */}
+      <section id="teachers">
+        <TeachersSection />
+      </section>
+
+      {/* Партнёры */}
+      <section id="partners">
+        <PartnersSection />
+      </section>
+
+      {/* Стоимость */}
+      <section id="pricing">
+        <PricingSection />
+      </section>
+
+      {/* Отзывы */}
+      <section id="feedback">
+        <FeedbackSection />
+      </section>
+
+      {/* Скачивание материалов */}
+      <section id="download">
+        <DownloadSection />
+      </section>
+
+      {/* Футер */}
       <Footer />
     </>
-  )
+  );
 }
-
-export default SingleCoursesPage

@@ -23,7 +23,10 @@ export default function Navbar() {
     <header className={styles.navbar}>
       <div className="container">
         <div className={styles.navbarInner}>
-          <Link to="/" className={styles.logo}>
+          <Link to="#" onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('navbar');
+          }} className={styles.logo}>
             <img src={navLogo} alt="Ameen Group" />
           </Link>
 
@@ -85,4 +88,3 @@ export default function Navbar() {
     </header>
   );
 }
-  

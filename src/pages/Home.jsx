@@ -17,7 +17,10 @@ export default function Home() {
   return (
     <>
       {/* Навигация */}
-      <Navbar />
+      <section id="navbar">
+        <Navbar />
+      </section>
+
 
       {/* Hero Section */}
       <section id="hero">
