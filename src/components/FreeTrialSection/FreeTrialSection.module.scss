@@ -1,19 +1,14 @@
 .freeTrial {
-    padding: 90px 0;
+    padding: 120px 0;
     background: #fff;
     text-align: center;
 
-    .container {
-        max-width: 1240px;
-        margin: 0 auto;
-        padding: 0 15px;
-    }
 
     .grid {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 50px;
+        gap: 30px;
     }
 
     .playWrapper {

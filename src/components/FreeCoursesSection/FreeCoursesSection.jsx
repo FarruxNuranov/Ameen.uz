@@ -114,9 +114,6 @@ export default function FreeCoursesSection() {
                     ))}
                 </Swiper>
 
-                <div className={styles.bottom}>
-                    <button className={styles.explore}>Explore all</button>
-                </div>
             </div>
         </section>
     );

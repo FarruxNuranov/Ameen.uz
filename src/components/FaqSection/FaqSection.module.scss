@@ -35,13 +35,16 @@
     gap: 10px;
   
     .item {
-      background: #f3f7fb;
+      background: #fff;
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
       border-radius: 8px;
       overflow: hidden;
       transition: background-color 0.4s;
-  
+    
+   
       &.open {
-        background: #e3f3ed;
+        background: #f1f8ff;
+       
       }
   
       .header {

@@ -1,52 +1,81 @@
 // src/components/Header/Navbar.jsx
-import React, { useState } from 'react';
+import React from 'react';
+import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import styles from './Navbar.module.scss';
-import { Link, NavLink } from 'react-router-dom';
-
-
-import { navLogo, navUz } from '../../../utils/getImage';
-
-const flags = {
-  uz: navUz,
-
-};
+import { navLogo } from '../../../utils/getImage';
 
 export default function Navbar() {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
 
-  const [language, setLanguage] = useState('uz');
-
-
-  const handleChange = (e) => {
-    setLanguage(e.target.value);
-    // сюда можно подключить i18n.changeLanguage(e.target.value)
+  const scrollToSection = (id) => {
+    if (pathname !== '/') {
+      navigate('/', { replace: true });
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      }, 50);
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    }
   };
+
   return (
     <header className={styles.navbar}>
       <div className="container">
         <div className={styles.navbarInner}>
           <Link to="/" className={styles.logo}>
             <img src={navLogo} alt="Ameen Group" />
-          
           </Link>
 
           <nav className={styles.navLinks}>
-            <NavLink to={"/courses"} target="_blank" >Ustozlar</NavLink>
-            <NavLink >Partnerlar</NavLink>
-            <NavLink >To’plamlar</NavLink>
-            <NavLink >Bepul kurslar</NavLink>
-            <NavLink >Fikrlar</NavLink>
+            <NavLink
+              to="#"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('ustozlar');
+              }}
+            >
+              Ustozlar
+            </NavLink>
+            <NavLink
+              to="#"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('partnerlar');
+              }}
+            >
+              Partnerlar
+            </NavLink>
+            <NavLink
+              to="#"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('toplamlar');
+              }}
+            >
+              To`plamlar
+            </NavLink>
+            <NavLink
+              to="#"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('bepul-kurslar');
+              }}
+            >
+              Bepul kurslar
+            </NavLink>
+            <NavLink
+              to="#"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('fikrlar');
+              }}
+            >
+              Fikrlar
+            </NavLink>
           </nav>
 
           <div className={styles.actions}>
-            <div className={styles.langSelect}>
-              <img src={flags[language]} alt={language} />
-              <select value={language} onChange={handleChange}>
-                <option value="uz">UZ</option>
-                <option value="ru">RU</option>
-                <option value="en">EN</option>
-              </select>
-            </div>
-
             <Link to="/signup" className={styles.cta}>
               Ro'yxatdan o'tish
             </Link>
@@ -56,3 +85,4 @@ export default function Navbar() {
     </header>
   );
 }
+  

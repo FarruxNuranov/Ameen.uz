@@ -1,19 +1,20 @@
 // src/components/TeachersSection/TeachersSection.jsx
 import React from 'react';
 import styles from './TeachersSection.module.scss';
-import { teacher1 } from '../../utils/getImage';
+import { teacher1, teacher2 } from '../../utils/getImage';
+import { Link } from 'react-router-dom';
 
 
 const teachers = [
   {
-    name: 'Guljamol Xudoyberdiyeva',
-    position: 'Senior product designer at Google',
+    name: 'Kozimxon To‘rayev',
+    position: 'O‘qituvchi Hammuallif',
     photo: teacher1,
   },
   {
     name: 'Guljamol Xudoyberdiyeva',
     position: 'Senior product designer at Google',
-    photo: teacher1,
+    photo: teacher2,
   },
 ];
 
@@ -27,13 +28,13 @@ export default function TeachersSection() {
 
         <div className={styles.list}>
           {teachers.map((t, idx) => (
-            <div className={styles.card} key={idx}>
+            <Link to={"/courses"} target="_blank"  className={styles.card} key={idx}>
               <img src={t.photo} alt={t.name} />
               <div className={styles.overlay}>
                 <h3>{t.name} <span>👨‍🏫</span></h3>
                 <p>{t.position}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

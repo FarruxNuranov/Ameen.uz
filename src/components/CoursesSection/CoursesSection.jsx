@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './CoursesSection.module.scss';
 import { Courses1, Courses2 } from '../../utils/getImage';
+import { Link } from 'react-router-dom';
 
 const courses = [
   { title: 'HR Kurs To‘plam', image: Courses1 },
@@ -23,10 +24,10 @@ export default function CoursesSection() {
 
         <div className={styles.courses}>
           {courses.map((course, i) => (
-            <div className={styles.courseCard} key={i}>
+            <Link Link to={"/courses"} target="_blank" className={styles.courseCard} key={i}>
               <img src={course.image} alt={course.title} />
               <div className={styles.courseTitle}>{course.title}</div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

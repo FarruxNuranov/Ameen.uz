@@ -1,25 +1,19 @@
 // src/components/Header/Navbar.jsx
-import React, { useState } from 'react';
+
 import styles from './HrNavbar.module.scss';
 import { Link, NavLink } from 'react-router-dom';
 
 
-import { navLogo, navUz } from '../../../utils/getImage';
+import { navLogo,  } from '../../../utils/getImage';
 
-const flags = {
-  uz: navUz,
 
-};
 
 export default function HrNavbar() {
 
-  const [language, setLanguage] = useState('uz');
 
 
-  const handleChange = (e) => {
-    setLanguage(e.target.value);
-    // сюда можно подключить i18n.changeLanguage(e.target.value)
-  };
+
+
   return (
     <header className={styles.navbar}>
       <div className="container">
@@ -38,15 +32,7 @@ export default function HrNavbar() {
           </nav>
 
           <div className={styles.actions}>
-            <div className={styles.langSelect}>
-              <img src={flags[language]} alt={language} />
-              <select value={language} onChange={handleChange}>
-                <option value="uz">UZ</option>
-                <option value="ru">RU</option>
-                <option value="en">EN</option>
-              </select>
-            </div>
-
+           
             <Link to="/signup" className={styles.cta}>
               Ro'yxatdan o'tish
             </Link>

@@ -92,9 +92,11 @@
 /* Разделитель */
 .divider {
     width: 2px;
-    background: #ccc;
+    height: 100px;
+
+    background: #3d3c3c;
     opacity: 0.3;
-    align-self: stretch;
+   
     flex-shrink: 0;
 
     @media (max-width: 768px) {
