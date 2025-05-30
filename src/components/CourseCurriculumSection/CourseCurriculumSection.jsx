@@ -1,86 +1,88 @@
-// CourseCurriculumSection.jsx
-import React, { useState } from 'react';
-import { FiCalendar, FiFileText } from 'react-icons/fi';
-import { MdMenuBook } from 'react-icons/md';
-import styles from './CourseCurriculumSection.module.scss';
+// src/components/CourseCurriculumSection/CourseCurriculumSection.jsx
+import React, { useState } from 'react'
+import { FiCalendar, FiChevronDown, FiChevronUp, FiPlay } from 'react-icons/fi'
+import styles from './CourseCurriculumSection.module.scss'
 
 const curriculum = [
   {
-    id: 1,
     title: 'HR vazifalari',
-    duration: '1–4 haftalar',
-    lessons: '4 darslar',
-    topics: [],
+    duration: '1-4 haftalar',
+    lessons: '5 darslar',
   },
   {
-    id: 2,
     title: 'Kompaniyada uchraydigan muammolarga HR beradigan yechimlar',
-    duration: '5–6 haftalar',
+    duration: '5-6 haftalar',
     lessons: '5 darslar',
-    topics: [
-      "Xodimlarning uzoq kelajakni ko’rmasligi",
-      "Biznes jarayonlar xodimlarga bog’liq bo’lib qolishi",
-      "Xodimlarning ketib qolishi",
-      "Kerakli xodimlar sonini bilmaslik",
-      "Ishni sifatli qilishda xodimlarning qobiliyatlari yetishmasligi",
-    ],
   },
-  // можно добавить ещё карточек
-];
+  {
+    title: 'Kompaniya Missiyasi, Strategiyasi, Maqsadlari va Qadriyatlari',
+    duration: '7-8 haftalar',
+    lessons: '4 darslar',
+  },
+  // …добавьте остальные пункты
+]
 
-const CourseCurriculumSection = () => {
-  const [openId, setOpenId] = useState(null);
+export default function CourseCurriculumSection() {
+  const [openIndex, setOpenIndex] = useState(-1)
 
   return (
-    <section className={styles.section}>
+    <section className={styles.curriculum}>
       <div className="container">
-    <div className={styles.boxC}>
-    <div className={styles.sidebar}>
-        <span className={styles.label}>dastur</span>
-        <h2 className={styles.title}>O‘quv dastur</h2>
-        <ul className={styles.infoList}>
-          <li>
-            <MdMenuBook className={styles.infoIcon} />
-            12 dars
-          </li>
-          <li>
-            <span className={styles.progress}>80% kurs – amaliyot</span>
-          </li>
-        </ul>
-        <button className={styles.button}>Ro’yxatdan o’tish</button>
-      </div>
-      <div className={styles.content}>
-        {curriculum.map(item => (
-          <div key={item.id} className={styles.card}>
-            <div
-              className={styles.cardHeader}
-              onClick={() => setOpenId(openId === item.id ? null : item.id)}
-            >
-              <h3 className={styles.cardTitle}>{item.title}</h3>
-              <div className={styles.badges}>
-                <span className={styles.badge}>
-                  <FiCalendar /> {item.duration}
-                </span>
-                <span className={styles.badge}>
-                  <FiFileText /> {item.lessons}
-                </span>
-              </div>
-              <div className={`${styles.arrow} ${openId === item.id ? styles.open : ''}`} />
-            </div>
-            {item.topics.length > 0 && (
-              <ul className={`${styles.cardBody} ${openId === item.id ? styles.expanded : ''}`}>
-                {item.topics.map((topic, i) => (
-                  <li key={i}>{topic}</li>
-                ))}
-              </ul>
-            )}
+        <div className={styles.content}>
+          {/* левая колонка */}
+          <div className={styles.left}>
+            <span className={styles.label}>DASTUR</span>
+            <h2 className={styles.title}>O`quv dastur</h2>
+            <ul className={styles.features}>
+              <li>
+                <FiPlay className={styles.icon} />
+                <span>12 dars</span>
+              </li>
+              <li>
+                <FiPlay className={styles.icon} />
+                <span>80 % kurs — amaliyot</span>
+              </li>
+            </ul>
+            <button className={styles.button}>Ro`yxatdan o`tish</button>
           </div>
-        ))}
-      </div>
-    </div>
+
+          {/* разделитель */}
+          <div className={styles.divider} />
+
+          {/* правая колонка: аккордеон */}
+          <div className={styles.accordion}>
+            {curriculum.map((item, idx) => {
+              const isOpen = idx === openIndex
+              return (
+                <div
+                  key={idx}
+                  className={`${styles.item} ${isOpen ? styles.open : ''}`}
+                >
+                  <button
+                    className={styles.header}
+                    onClick={() => setOpenIndex(isOpen ? -1 : idx)}
+                  >
+                    <span>{item.title}</span>
+                    {isOpen ? <FiChevronUp /> : <FiChevronDown />}
+                  </button>
+                  {isOpen && (
+                    <div className={styles.panel}>
+                      <div className={styles.detail}>
+                        <FiCalendar />
+                        <span>{item.duration}</span>
+                      </div>
+                      <div className={styles.detail}>
+                        <FiPlay />
+                        <span>{item.lessons}</span>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+        </div>
       </div>
     </section>
-  );
-};
-
-export default CourseCurriculumSection;
+  )
+}

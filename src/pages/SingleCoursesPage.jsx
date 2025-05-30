@@ -11,6 +11,7 @@ import CourseOverviewSection from '../components/CourseOverviewSection/CourseOve
 import TeachersSection from '../components/TeachersSection/TeachersSection'
 import PricingSection from '../components/PricingSection/PricingSection'
 import HrNavbar from '../components/Header/SingleHrNavbar/HrNavbar'
+import CourseCurriculumSection from '../components/CourseCurriculumSection/CourseCurriculumSection'
 
 const SingleCoursesPage = () => {
   return (
@@ -19,6 +20,7 @@ const SingleCoursesPage = () => {
       <HRCourseSection />
       <FreeTrialSection />
       <CourseOverviewSection />
+      <CourseCurriculumSection/>
       <TeachersSection />
       <PartnersSection />
       <PricingSection />

@@ -6,7 +6,7 @@ import { Courses1, Courses2 } from '../../utils/getImage';
 const courses = [
   { title: 'HR Kurs To‘plam', image: Courses1 },
   { title: 'Islom Moliya Kurs To‘plam', image: Courses2 },
-  { title: 'Marketing Kurs To‘plam', image: Courses1 },
+
 ];
 
 export default function CoursesSection() {
