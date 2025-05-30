@@ -20,6 +20,29 @@
     margin-bottom: 8px;
     padding-left: 40px;
 
+    position: relative;
+    display: inline-block;
+  
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px; // длина линии
+      height: 2px; // толщина линии
+      background-color: #17b365;
+    }
+  
+    &::before {
+      left: -15px;
+    }
+  
+    &::after {
+      right: -45px;
+    }
+  
+
    
 }
 

@@ -1,5 +1,5 @@
 .contact {
-    padding: 120px 0;
+    padding: 64px 0;
     background: #f3f7fb;
     text-align: center;
 
@@ -7,25 +7,47 @@
 }
 
 .label {
+    position: relative;
+    display: inline-block;
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 16px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #17b365;
-
-}
+    padding: 0 24px;           // отступы, чтобы линии не прилегали вплотную
+  
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;             // длина линии
+      height: 2px;             // толщина линии
+      background-color: #17b365;
+    }
+  
+    &::before {
+      left: -25px;
+    }
+  
+    &::after {
+      right: -25px;
+    }
+  }
 
 .title {
     font-size: 32px;
     font-weight: 700;
+    margin-top: 16px;
     margin-bottom: 12px;
 }
 
 .subtitle {
     font-size: 16px;
     color: #666;
-    margin-bottom: 40px;
+    margin-bottom: 56px;
     line-height: 1.5;
 }
 

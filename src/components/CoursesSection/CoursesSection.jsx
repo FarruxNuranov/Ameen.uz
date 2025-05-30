@@ -29,6 +29,7 @@ export default function CoursesSection() {
           </p>
         </div>
 
+        <div className="container">
         <div className={styles.courses}>
           {courses.map((course, i) => {
             const isClickable = course.link && course.link.trim() !== '';
@@ -54,6 +55,7 @@ export default function CoursesSection() {
               </div>
             );
           })}
+        </div>
         </div>
       </div>
     </section>

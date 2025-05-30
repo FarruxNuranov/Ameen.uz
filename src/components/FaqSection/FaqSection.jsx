@@ -40,7 +40,8 @@ export default function FaqSection() {
   return (
     <section className={styles.faq}>
       <div className="container">
-        <p className={styles.label}>FAQs</p>
+       <div className={styles.faqbox}>
+       <p className={styles.label}>FAQs</p>
         <h2 className={styles.title}>Tez so'raladigan savollar</h2>
         <p className={styles.subtitle}>
           Answer to your life questions are here and learn why to use our
@@ -80,6 +81,7 @@ export default function FaqSection() {
             );
           })}
         </div>
+       </div>
       </div>
     </section>
   );

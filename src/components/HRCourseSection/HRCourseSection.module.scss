@@ -32,6 +32,27 @@
         font-weight: 600;
         text-transform: uppercase;
         margin-bottom: 8px;
+        margin-left: 50px;
+        position: relative;
+        display: inline-block;
+      
+        &::before
+       {
+          content: "";
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 30px; // длина линии
+          height: 2px; // толщина линии
+          background-color: #17b365;
+        }
+      
+        &::before {
+          left: -45px;
+        }
+      
+       
+      
     }
 
     .title {

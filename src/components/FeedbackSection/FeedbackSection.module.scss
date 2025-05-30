@@ -2,250 +2,301 @@
 @import "swiper/css/navigation";
 
 .section {
-    padding: 120px 0;
-    background: #fff;
-    text-align: center;
+  padding: 120px 0;
+  background: #fff;
+  text-align: center;
 }
 
 .label {
-    color: #00c78c;
-    font-weight: 600;
-    font-size: 14px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: #17b365;
+  position: relative;
+  display: inline-block;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 2px;
+    background-color: #17b365;
+  }
+  &::before {
+    left: -45px;
+  }
+  &::after {
+    right: -45px;
+  }
 }
 
 .title {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 40px;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
 }
 
 .slider {
-    padding-bottom: 40px;
+  padding-bottom: 40px;
 
-    :global(.swiper-pagination) {
-        position: static;
-        margin-top: 20px;
+  :global(.swiper-pagination) {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
 
-        :global(.swiper-pagination-bullet) {
-            width: 20px;
-            height: 20px;
-            background: rgba(11, 14, 78, 0.3);
-            opacity: 1;
-            margin: 0 6px;
-            transition: background 0.3s ease;
-
-            &:hover {
-                background: rgba(11, 14, 78, 0.5);
-            }
-        }
-
-        :global(.swiper-pagination-bullet-active) {
-            background: #0b0e4e;
-            transform: scale(1.2);
-        }
+    /* navigation bullets */
+    :global(.swiper-pagination-bullet) {
+      width: 20px;
+      height: 20px;
+      background: rgba(11, 14, 78, 0.3);
+      opacity: 1;
+      margin: 0 6px;
+      transition: background 0.3s ease;
+      &:hover {
+        background: rgba(11, 14, 78, 0.5);
+      }
     }
+    :global(.swiper-pagination-bullet-active) {
+      background: #0b0e4e;
+      transform: scale(1.2);
+    }
+
+    /* decorative lines */
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 60px;
+      height: 2px;
+      background: #17b365;
+    }
+    &::before {
+      left: -80px;
+      transform: translateY(-50%) rotate(-2deg);
+    }
+    &::after {
+      right: -80px;
+      transform: translateY(-50%) rotate(2deg);
+    }
+  }
 }
 
 .slide {
-    display: flex;
-    justify-content: center;
-    transition: transform 0.3s, opacity 0.3s;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.3s, opacity 0.3s;
 
-    &.swiper-slide-prev,
-    &.swiper-slide-next {
-        opacity: 0.5;
-        transform: scale(0.9);
-    }
-
-    &.swiper-slide-active {
-        opacity: 1;
-        transform: scale(1);
-        z-index: 2;
-    }
+  &.swiper-slide-prev,
+  &.swiper-slide-next {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+  &.swiper-slide-active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
+  }
 }
 
 .card {
-    position: relative;
-    width: 662px;
-    height: 378px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  position: relative;
+  width: 662px;
+  height: 378px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: brightness(0.6);
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
 
-        .swiper-slide-active & {
-            filter: none;
-        }
+    .swiper-slide-active & {
+      filter: none;
     }
+  }
 
-    .playBtn {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 32px;
-        background: #fff;
-        border-radius: 50%;
-        width: 72px;
-        height: 72px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        cursor: pointer;
-        z-index: 2;
-        transition: transform 0.3s;
-
-        &:hover {
-            transform: translate(-50%, -50%) scale(1.1);
-        }
+  .playBtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    background: #fff;
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+    transition: transform 0.3s;
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.1);
     }
+  }
 
-    .text {
-        position: absolute;
-        bottom: 15px;
-        left: 20px;
-        right: 20px;
-        color: #fff;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 1.4;
-        text-align: center;
-        z-index: 2;
-    }
+  .text {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    right: 20px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+    z-index: 2;
+  }
 }
 
 /* Modal overlay */
 .modalOverlay {
-    position: fixed;
-
-    inset: 0;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
 .modalBox {
-    position: relative;
-    width: 100%;
-    max-width: 1050px;
-    width: 100%;
-    display: flex;
-    justify-content: center ;
-    align-items: center;
-
+  position: relative;
+  width: 100%;
+  max-width: 1050px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Modal content */
 .modalContent {
-    position: relative;
-    background: #000;
-    width: 100%;
-    max-width: 900px;
-    width: 100%;
-    border-radius: 12px;
-    overflow: hidden;
+  position: relative;
+  background: #000;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 /* Close button */
 .closeBtn {
-    position: absolute;
-    border-radius: 64px;
-    padding: 8px;
-    width: 40px;
-    height: 40px;
-    background: #464646;
-    top: 1%;
-    right: 1%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    color: #fff;
-    font-size: 38px;
-    cursor: pointer;
-    z-index: 2;
-    
+  position: absolute;
+  border-radius: 64px;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  background: #464646;
+  top: 1%;
+  right: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: #fff;
+  font-size: 38px;
+  cursor: pointer;
+  z-index: 2;
 }
 
 /* The video slider inside modal */
 .modalSlider {
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
-    /* 16:9 aspect */
-    position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
 }
 
 .modalSlider :global(.swiper-wrapper) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  position: absolute;
+  inset: 0;
 }
 
 .modalSlide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .videoWrapper {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .videoWrapper iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 /* Nav arrows */
 .prevBtn,
 .nextBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
-    color: #fff;
-    font-size: 28px;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 2;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
 }
 
 .prevBtn {
-    left: 12px;
+  left: 12px;
 }
 
 .nextBtn {
-    right: 12px;
+  right: 12px;
 }
 
-@media (max-width: 768px) {
-    .modalContent {
-        width: 100%;
+/* Переопределяем стиль пагинации Swiper */
+.slider {
+    padding-bottom: 40px;
+ 
+  
+    /* Сам контейнер буллетов */
+    :global(.swiper-pagination) {
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      gap: 8px; /* расстояние между «таблетками» */
+      position: static; /* сбрасываем position: absolute */
+      padding-top: 92px;
     }
-
-    .prevBtn,
-    .nextBtn {
-        display: none;
+  
+    /* Сами буллеты – теперь не круглые, а «таблетки» */
+    :global(.swiper-pagination-bullet) {
+      width: 30px !important;        /* длина таблетки */
+      height: 6px !important;        /* толщина */
+      border-radius: 3px !important; /* скругление концов */
+      background: rgba(11, 14, 78, 0.3) !important;
+      opacity: 1 !important;
+      margin: 0 !important;          /* межбуллетный gap задаём контейнеру */
+      transition: background 0.3s, width 0.3s;
     }
-}
+  
+    /* Активная «таблетка» */
+    :global(.swiper-pagination-bullet-active) {
+      background: #0b0e4e !important;
+      width: 40px !important;        /* чуть длиннее */
+    }
+  }
+  

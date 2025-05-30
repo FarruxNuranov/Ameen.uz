@@ -1,17 +1,47 @@
 .faq {
-  padding: 80px 0;
+  
   background: #fff;
+  
 
 
 }
 
+.faqbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 0;
+}
+
 .label {
-  color: #ffffff;
+  color: #17b365;
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 8px;
+
+  position: relative;
+  display: inline-block;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px; // длина линии
+    height: 2px; // толщина линии
+    background-color: #17b365;
+  }
+
+  &::before {
+    left: -45px;
+  }
+
+  &::after {
+    right: -45px;
+  }
 }
 
 .title {
