@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../components/Header/Navbar'
+import Navbar from '../components/Header/HomeNavbar/Navbar'
 import Footer from '../components/Footer/Footer'
 import DownloadSection from '../components/DownloadSection/DownloadSection'
 import FeedbackSection from '../components/FeedbackSection/FeedbackSection'
@@ -10,11 +10,12 @@ import CourseOverviewSection from '../components/CourseOverviewSection/CourseOve
 
 import TeachersSection from '../components/TeachersSection/TeachersSection'
 import PricingSection from '../components/PricingSection/PricingSection'
+import HrNavbar from '../components/Header/SingleHrNavbar/HrNavbar'
 
 const SingleCoursesPage = () => {
   return (
     <>
-      <Navbar />
+      <HrNavbar />
       <HRCourseSection />
       <FreeTrialSection />
       <CourseOverviewSection />

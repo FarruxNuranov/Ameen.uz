@@ -2,9 +2,9 @@
 import React, { useState } from 'react';
 import styles from './Navbar.module.scss';
 import { Link, NavLink } from 'react-router-dom';
-import { FaChevronDown } from 'react-icons/fa';
 
-import { navLogo, navUz } from '../../utils/getImage';
+
+import { navLogo, navUz } from '../../../utils/getImage';
 
 const flags = {
   uz: navUz,
@@ -30,10 +30,11 @@ export default function Navbar() {
           </Link>
 
           <nav className={styles.navLinks}>
-            <NavLink to={"/courses"} target="_blank" >Kurslar</NavLink>
-            <NavLink >Aloqa</NavLink>
-            <NavLink >Biz haqimizda</NavLink>
-            <NavLink >Narxlar</NavLink>
+            <NavLink to={"/courses"} target="_blank" >Ustozlar</NavLink>
+            <NavLink >Partnerlar</NavLink>
+            <NavLink >To’plamlar</NavLink>
+            <NavLink >Bepul kurslar</NavLink>
+            <NavLink >Fikrlar</NavLink>
           </nav>
 
           <div className={styles.actions}>
