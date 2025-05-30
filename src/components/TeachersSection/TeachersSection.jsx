@@ -7,11 +7,13 @@ import { Link } from 'react-router-dom';
 
 const teachers = [
   {
+    link: '/courses',
     name: 'Kozimxon To‘rayev',
     position: 'O‘qituvchi Hammuallif',
     photo: teacher1,
   },
   {
+    link: '#',
     name: 'Guljamol Xudoyberdiyeva',
     position: 'Senior product designer at Google',
     photo: teacher2,
@@ -27,15 +29,36 @@ export default function TeachersSection() {
         <p className={styles.subtitle}>Eng kuchli soha vakillaridan o‘rganing</p>
 
         <div className={styles.list}>
-          {teachers.map((t, idx) => (
-            <Link to={"/courses"} target="_blank"  className={styles.card} key={idx}>
-              <img src={t.photo} alt={t.name} />
-              <div className={styles.overlay}>
-                <h3>{t.name} <span>👨‍🏫</span></h3>
-                <p>{t.position}</p>
+          {teachers.map((t, idx) => {
+            const isClickable = t.link && t.link !== '#';
+            // содержимое карточки
+            const cardContent = (
+              <>
+                <img src={t.photo} alt={t.name} />
+                <div className={styles.overlay}>
+                  <h3>
+                    {t.name} <span>👨‍🏫</span>
+                  </h3>
+                  <p>{t.position}</p>
+                </div>
+              </>
+            );
+
+            return isClickable ? (
+              <Link
+                to={t.link}
+                target="_blank"
+                className={styles.card}
+                key={idx}
+              >
+                {cardContent}
+              </Link>
+            ) : (
+              <div className={styles.card} key={idx}>
+                {cardContent}
               </div>
-            </Link>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

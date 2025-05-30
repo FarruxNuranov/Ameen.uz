@@ -2,8 +2,25 @@
 import React from 'react';
 import styles from './BenefitsSection.module.scss';
 import { featuresImage, benefitsLogo } from '../../utils/getImage';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function BenefitsSection() {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  const scrollToSection = (id) => {
+    if (pathname !== '/') {
+      navigate('/', { replace: true });
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      }, 50);
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+
+
   return (
     <section className={styles.section}>
       <div className="container">
@@ -34,11 +51,14 @@ export default function BenefitsSection() {
               Ameen.uz bilan o‘rganing, yetakchilar qatoriga qo‘shiling.
             </h2>
             <p className={styles.text}>
-              Zamonaviy kasblarni amaliy tarzda o‘rganing, real loyihalarda tajriba orttiring 
-              va eng nufuzli kompaniyalarda ishlash imkoniyatini qo‘lga kiriting. 
+              Zamonaviy kasblarni amaliy tarzda o‘rganing, real loyihalarda tajriba orttiring
+              va eng nufuzli kompaniyalarda ishlash imkoniyatini qo‘lga kiriting.
               Ameen.uz — o‘qish bilan ishni bog‘laydigan platforma.
             </p>
-            <button className={styles.button}>Batafsil</button>
+            <button onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('contact');
+            }} className={styles.button}>Batafsil</button>
           </div>
 
         </div>
