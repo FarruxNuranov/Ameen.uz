@@ -13,13 +13,7 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #17b365;
-    &::after {
-        content: '';
-        display: block;
-        border: 2px solid #17b365;
-        width: 32px;
-        height: 0px;
-}
+
 }
 
 .title {

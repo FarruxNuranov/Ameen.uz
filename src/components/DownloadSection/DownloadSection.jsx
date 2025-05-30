@@ -1,7 +1,7 @@
 // src/components/DownloadSection/DownloadSection.jsx
 import React from 'react';
 import styles from './DownloadSection.module.scss';
-import { googlePlay,  qrPhone } from '../../utils/getImage';
+import { AppStory, googlePlay,  qrPhone } from '../../utils/getImage';
 
 export default function DownloadSection() {
   return (
@@ -29,7 +29,7 @@ export default function DownloadSection() {
                 rel="noopener noreferrer"
                 aria-label="Download on the App Store"
               >
-                <img src={googlePlay} alt="App Store badge" />
+                <img src={AppStory} alt="App Store badge" />
               </a>
             </div>
           </div>
