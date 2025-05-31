@@ -1,14 +1,14 @@
 .teachers {
-    padding: 120px 0;
+    padding-top: 120px;
     text-align: center;
 
     .label {
-        color: #17b365;
-        font-size: 14px;
-        font-weight: 600;
-        margin-bottom: 8px;
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: 0.06em;
         text-transform: uppercase;
-        font-family: var(--second-family);
+        color: #17b365;
         position: relative;
         display: inline-block;
 
@@ -33,16 +33,19 @@
     }
 
     .title {
-        font-size: 32px;
+        font-family: var(--font-family);
         font-weight: 700;
-        margin-bottom: 10px;
-        font-family: var(--second-family);
+        font-size: 36px;
+        line-height: 144%;
+        color: #000;
     }
 
     .subtitle {
-        font-size: 16px;
-        color: #555;
-        margin-bottom: 40px;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 22px;
+        color: #182f43;
+        margin-top: 16px;
     }
 }
 
@@ -63,12 +66,13 @@
     cursor: pointer;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: 300ms;
+    margin-top: 40px;
 
     &:hover {
         transform: translateY(-4px);
         box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
     }
-  
+
 
     img {
         width: 100%;

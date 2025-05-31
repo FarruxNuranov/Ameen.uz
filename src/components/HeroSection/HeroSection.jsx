@@ -20,7 +20,10 @@ export default function HeroSection() {
             <div className={styles.buttons}>
               <button className={styles.primary}>Ro’yxatdan o’tish</button>
               <button className={styles.secondary}>
-                <span className={styles.play}>▶</span> SEE OUR ACTIVITY
+                <span className={styles.play}>
+                  <span className={styles.playmini}>▶
+                  </span>
+                </span> SEE OUR ACTIVITY
               </button>
             </div>
           </div>

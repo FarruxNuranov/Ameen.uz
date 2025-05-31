@@ -1,4 +1,5 @@
 // src/components/CoursesSection/CoursesSection.jsx
+
 import React from 'react';
 import styles from './CoursesSection.module.scss';
 import { Courses1, Courses2 } from '../../utils/getImage';
@@ -8,54 +9,63 @@ const courses = [
   {
     title: 'HR Kurs To‘plam',
     image: Courses1,
-    link: '/courses',       // допустим, эта ссылка есть
+    link: '/courses',
   },
   {
     title: 'Islom Moliya Kurs To‘plam',
     image: Courses2,
-    link: '',                  // ссылки нет — рендерим без перехода
+    link: '',
   },
+  // Если нужно добавить ещё карточек, просто добавьте сюда ещё объект(ы)
 ];
 
 export default function CoursesSection() {
   return (
     <section className={styles.section}>
-      <div className={styles.wrapper}>
-        <div className={styles.infoCard}>
-          <p className={styles.label}>TO‘PLAMLAR</p>
-          <h2 className={styles.title}>Kurslar to‘plamlari</h2>
-          <p className={styles.desc}>
-            To‘plamlar orqali bir yo‘nalishdagi kursni to‘liq va mukammal holatda o‘rganing
-          </p>
+      {/* Глобальный контейнер */}
+      <div className="container">
+        <div className={styles.navbox}>
+        <div className={styles.customNav}>
+        <button className={styles.prevBtn}>←</button>
+        <button className={styles.nextBtn}>→</button>
+        
+         </div>
         </div>
+      
+        <div className={styles.wrapper}>
+          {/* ===== Левая «Инфо–карта» ===== */}
+          <div className={styles.infoCard}>
+            <p className={styles.label}>TO‘PLAMLAR</p>
+            <h2 className={styles.title}>Kurslar to‘plamlari</h2>
+            <p className={styles.desc}>
+              To‘plamlar orqali bir yo‘nalishdagi kursni to‘liq va mukammal holatda o‘rganing
+            </p>
+          </div>
 
-        <div className="container">
-        <div className={styles.courses}>
-          {courses.map((course, i) => {
-            const isClickable = course.link && course.link.trim() !== '';
-            const content = (
-              <>
-                <img src={course.image} alt={course.title} />
-                <div className={styles.courseTitle}>{course.title}</div>
-              </>
-            );
+          {/* ===== Ряд статичных карточек курсов ===== */}
+          <div className={styles.coursesRow}>
+            {courses.map((course, index) => {
+              const isClickable = course.link && course.link.trim() !== '';
+              const content = (
+                <>
+                  <img src={course.image} alt={course.title} />
+                  <div className={styles.courseTitle}>{course.title}</div>
+                </>
+              );
 
-            return isClickable ? (
-              <Link
-                to={course.link}
-                target="_blank"
-                className={styles.courseCard}
-                key={i}
-              >
-                {content}
-              </Link>
-            ) : (
-              <div className={styles.courseCard} key={i}>
-                {content}
-              </div>
-            );
-          })}
-        </div>
+              return (
+                <React.Fragment key={index}>
+                  {isClickable ? (
+                    <Link to={course.link} target="_blank" className={styles.courseCard}>
+                      {content}
+                    </Link>
+                  ) : (
+                    <div className={styles.courseCard}>{content}</div>
+                  )}
+                </React.Fragment>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

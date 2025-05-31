@@ -8,6 +8,7 @@ export default function Navbar() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
+
   const scrollToSection = (id) => {
     if (pathname !== '/') {
       navigate('/', { replace: true });

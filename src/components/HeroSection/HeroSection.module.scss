@@ -1,123 +1,498 @@
-.hero {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(277deg, #000046 30%, rgba(43, 50, 178, 0) 70%);
-        z-index: 1;
-    }
-}
-
-.wrapper {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-}
-
-.content {
-    max-width: 580px;
-    color: white;
-    padding: 60px 0;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.label {
-    color: #00e0c3;
-    font-weight: 500;
-    font-size: 14px;
-    margin-bottom: 12px;
-    font-family: var(--second-family);
-}
-
-h1 {
-    font-family: var(--font-family);
-    font-weight: 700;
-    font-size: 56px;
-    line-height: 129%;
-    letter-spacing: 0em;
-    color: #fff;
-}
-
-.subtitle {
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 160%;
-    letter-spacing: 0.01em;
-    color: #fff;
-}
-
-.buttons {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    .primary {
-        font-family: var(--font-family);
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 125%;
-        letter-spacing: 0.01em;
-        text-align: center;
-        color: #010147;
-        border-radius: 8px;
-        padding: 14px 16px;
-        width: 184px;
-        height: 56px;
-
-        &:hover {
-            background-color: #f2f2f2;
-        }
-    }
-
-    .secondary {
+    .hero {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
         display: flex;
         align-items: center;
-        gap: 12px;
-        border: none;
-        color: #fff;
-        background: transparent;
-        font-family: var(--font-family);
-        font-weight: 700;
-        font-size: 15px;
-        line-height: 133%;
-        letter-spacing: 0.01em;
-        text-transform: uppercase;
-        cursor: pointer;
-        text-decoration-skip-ink: none;
-        color: #fff;
+        overflow: hidden;
 
-        & :hover {
-            transform: scale(1.1);
-        }
-
-       
-
-        .play {
-            width: 56px;
-            height: 56px;
-            border: 2px solid #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(277deg, #000046 30%, rgba(43, 50, 178, 0) 70%);
+            z-index: 1;
         }
     }
-}
+
+    .wrapper {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    .content {
+        max-width: 580px;
+        color: white;
+        padding: 60px 0;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .label {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #77ecb2;
+        margin-left: 40px;
+        position: relative;
+        display: inline-block;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 2px solid #77ecb2;
+            width: 32px;
+            height: 0px;
+        }
+
+        &::before {
+            left: -45px;
+        }
+
+
+    }
+
+    h1 {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 56px;
+        line-height: 129%;
+        letter-spacing: 0em;
+        color: #fff;
+    }
+
+    .subtitle {
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 160%;
+        letter-spacing: 0.01em;
+        color: #fff;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+
+        flex-wrap: wrap;
+
+        .primary {
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 125%;
+            letter-spacing: 0.01em;
+            text-align: center;
+            color: #010147;
+            border-radius: 8px;
+            padding: 14px 16px;
+            width: 184px;
+            height: 56px;
+            border: none;
+
+            &:hover {
+                background-color: #ffffffb4;
+            }
+        }
+
+        .secondary {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: none;
+            color: #fff;
+            background: transparent;
+            font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 133%;
+            letter-spacing: 0.01em;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-decoration-skip-ink: none;
+            color: #fff;
+
+            & :hover {
+                transform: scale(1.05);
+            }
+
+
+
+            .play {
+                width: 56px;
+                height: 56px;
+                border: 2px solid #fff;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 14px;
+
+            }
+        }
+    }
+
+    .playmini {
+        width: 44px;
+        height: 44px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+    }
+
+
+    /* ----------------------------
+   Max-Width: 1200px
+   ---------------------------- */
+    @media (max-width: 1200px) {
+        .content {
+            max-width: 500px;
+            padding: 50px 0;
+            gap: 24px;
+        }
+
+        .label {
+            margin-left: 30px;
+            font-size: 14px;
+
+            &::before {
+                width: 28px;
+                left: -35px;
+            }
+        }
+
+        h1 {
+            font-size: 48px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .buttons .primary {
+            font-size: 15px;
+            padding: 12px 14px;
+            width: 160px;
+            height: 50px;
+        }
+
+        .buttons .secondary {
+            font-size: 14px;
+
+            .play {
+                width: 52px;
+                height: 52px;
+                font-size: 13px;
+            }
+        }
+    }
+
+    /* ----------------------------
+     Max-Width: 1000px
+     ---------------------------- */
+    @media (max-width: 1000px) {
+        .wrapper {
+            justify-content: center;
+        }
+
+        .content {
+            max-width: 420px;
+            padding: 40px 0;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .label {
+            margin-left: 0;
+
+            &::before {
+                left: calc(50% - 32px);
+            }
+        }
+
+        h1 {
+            font-size: 42px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 17px;
+            line-height: 1.4;
+        }
+
+        .buttons {
+            justify-content: center;
+
+            .primary {
+                width: 140px;
+                height: 48px;
+                font-size: 14px;
+                padding: 10px 12px;
+            }
+
+            .secondary .play {
+                width: 48px;
+                height: 48px;
+                font-size: 12px;
+            }
+        }
+    }
+
+    /* ----------------------------
+     Max-Width: 800px
+     ---------------------------- */
+    @media (max-width: 800px) {
+        .hero {
+            min-height: 80vh;
+        }
+
+        .content {
+            max-width: 360px;
+            padding: 32px 0;
+            gap: 18px;
+        }
+
+        .label {
+            font-size: 13px;
+
+            &::before {
+                width: 24px;
+                left: calc(50% - 24px);
+            }
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+        }
+
+        .buttons {
+            flex-direction: column;
+            gap: 16px;
+
+            .primary {
+                width: 100%;
+                max-width: 180px;
+                height: 44px;
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .secondary {
+                font-size: 13px;
+
+                .play {
+                    width: 44px;
+                    height: 44px;
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+
+    /* ----------------------------
+     Max-Width: 600px
+     ---------------------------- */
+    @media (max-width: 600px) {
+        .hero {
+            min-height: 70vh;
+        }
+
+        .content {
+            max-width: 300px;
+            padding: 24px 0;
+            gap: 16px;
+        }
+
+        .label {
+            font-size: 12px;
+
+            &::before {
+                display: none;
+                width: 20px;
+                left: calc(50% - 20px);
+            }
+        }
+
+        h1 {
+            font-size: 30px;
+        }
+
+        .subtitle {
+            font-size: 15px;
+        }
+
+        .buttons {
+            .primary {
+                width: 100%;
+                max-width: 160px;
+                height: 42px;
+                font-size: 13px;
+                padding: 8px 10px;
+            }
+
+            .secondary {
+                font-size: 12px;
+
+                .play {
+                    width: 35px;
+                    height: 35px;
+                    font-size: 9px;
+                }
+            }
+        }
+
+        .playmini {
+            width: 25px;
+            height: 25px;
+            border: 2px solid #fff;
+            border-radius: 100%;
+
+
+
+        }
+    }
+
+    /* ----------------------------
+     Max-Width: 500px
+     ---------------------------- */
+    @media (max-width: 500px) {
+
+        .wrapper {
+            justify-content: center;
+        }
+
+
+        .hero {
+            min-height: 50vh;
+            background-size: cover;
+            background-position: start;
+        }
+
+        .content {
+            max-width: 300px;
+            padding: 20px 0;
+            gap: 14px;
+            justify-content: end;
+        }
+
+        .label {
+            font-size: 11px;
+
+            &::before {
+                display: none;
+                width: 18px;
+                left: calc(50% - 18px);
+            }
+        }
+
+        h1 {
+            font-size: 26px;
+
+        }
+
+        .subtitle {
+            font-size: 14px;
+        }
+
+        .buttons {
+            .primary {
+                width: 100%;
+                max-width: 140px;
+                height: 40px;
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            .secondary {
+                font-size: 11px;
+
+                .play {
+                    width: 35px;
+                    height: 35px;
+                    font-size: 9px;
+                }
+            }
+        }
+
+        .playmini {
+            width: 25px;
+            height: 25px;
+            border: 2px solid #fff;
+            border-radius: 100%;
+
+
+
+        }
+    }
+
+    /* ----------------------------
+     Max-Width: 400px
+     ---------------------------- */
+    @media (max-width: 400px) {
+        .hero {
+            min-height: 50vh;
+        }
+
+        .content {
+            max-width: 220px;
+            padding: 16px 0;
+            gap: 12px;
+        }
+
+        .label {
+            font-size: 10px;
+
+            &::before {
+                width: 16px;
+                left: calc(50% - 16px);
+            }
+        }
+
+        h1 {
+            font-size: 22px;
+        }
+
+        .subtitle {
+            font-size: 13px;
+        }
+
+        .buttons {
+            .primary {
+                width: 100%;
+                max-width: 120px;
+                height: 38px;
+                font-size: 11px;
+                padding: 6px 8px;
+            }
+
+            .secondary {
+                font-size: 10px;
+
+                .play {
+                    width: 32px;
+                    height: 32px;
+                    font-size: 8px;
+                }
+            }
+        }
+    }

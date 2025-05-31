@@ -2,7 +2,7 @@
 @import "swiper/css/navigation";
 
 .section {
-  padding: 120px 0;
+  padding-top: 210px;
   background: #fff;
   text-align: center;
 }
@@ -26,9 +26,11 @@
     height: 2px;
     background-color: #17b365;
   }
+
   &::before {
     left: -45px;
   }
+
   &::after {
     right: -45px;
   }
@@ -56,10 +58,12 @@
       opacity: 1;
       margin: 0 6px;
       transition: background 0.3s ease;
+
       &:hover {
         background: rgba(11, 14, 78, 0.5);
       }
     }
+
     :global(.swiper-pagination-bullet-active) {
       background: #0b0e4e;
       transform: scale(1.2);
@@ -75,10 +79,12 @@
       height: 2px;
       background: #17b365;
     }
+
     &::before {
       left: -80px;
       transform: translateY(-50%) rotate(-2deg);
     }
+
     &::after {
       right: -80px;
       transform: translateY(-50%) rotate(2deg);
@@ -96,6 +102,7 @@
     opacity: 0.5;
     transform: scale(0.9);
   }
+
   &.swiper-slide-active {
     opacity: 1;
     transform: scale(1);
@@ -139,6 +146,7 @@
     cursor: pointer;
     z-index: 2;
     transition: transform 0.3s;
+
     &:hover {
       transform: translate(-50%, -50%) scale(1.1);
     }
@@ -268,35 +276,41 @@
 
 /* Переопределяем стиль пагинации Swiper */
 .slider {
-    padding-bottom: 40px;
- 
-  
-    /* Сам контейнер буллетов */
-    :global(.swiper-pagination) {
-      display: flex !important;
-      justify-content: center;
-      align-items: center;
-      margin-top: 20px;
-      gap: 8px; /* расстояние между «таблетками» */
-      position: static; /* сбрасываем position: absolute */
-      padding-top: 92px;
-    }
-  
-    /* Сами буллеты – теперь не круглые, а «таблетки» */
-    :global(.swiper-pagination-bullet) {
-      width: 30px !important;        /* длина таблетки */
-      height: 6px !important;        /* толщина */
-      border-radius: 3px !important; /* скругление концов */
-      background: rgba(11, 14, 78, 0.3) !important;
-      opacity: 1 !important;
-      margin: 0 !important;          /* межбуллетный gap задаём контейнеру */
-      transition: background 0.3s, width 0.3s;
-    }
-  
-    /* Активная «таблетка» */
-    :global(.swiper-pagination-bullet-active) {
-      background: #0b0e4e !important;
-      width: 40px !important;        /* чуть длиннее */
-    }
+  padding-bottom: 40px;
+
+
+  /* Сам контейнер буллетов */
+  :global(.swiper-pagination) {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 8px;
+    /* расстояние между «таблетками» */
+    position: static;
+    /* сбрасываем position: absolute */
+    padding-top: 92px;
   }
-  
+
+  /* Сами буллеты – теперь не круглые, а «таблетки» */
+  :global(.swiper-pagination-bullet) {
+    width: 30px !important;
+    /* длина таблетки */
+    height: 6px !important;
+    /* толщина */
+    border-radius: 3px !important;
+    /* скругление концов */
+    background: rgba(11, 14, 78, 0.3) !important;
+    opacity: 1 !important;
+    margin: 0 !important;
+    /* межбуллетный gap задаём контейнеру */
+    transition: background 0.3s, width 0.3s;
+  }
+
+  /* Активная «таблетка» */
+  :global(.swiper-pagination-bullet-active) {
+    background: #0b0e4e !important;
+    width: 40px !important;
+    /* чуть длиннее */
+  }
+}
