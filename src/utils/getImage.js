@@ -36,3 +36,7 @@ export { default as featuresImage } from '../assets/Image/Benefits/featuresImage
 export { default as benefitsLogo } from '../assets/Image/Benefits/benefitsLogo.svg'
 export { default as playmini } from '../assets/playmini.svg'
 export { default as failmini } from '../assets/failmini.svg'
+export { default as instagram } from '../assets/Image/Footer/Instagram.svg'
+export { default as telegram } from '../assets/Image/Footer/Telegram.svg'
+export { default as youtube } from '../assets/Image/Footer/Youtube.svg'
+export { default as facebook } from '../assets/Image/Footer/Facebook.svg'

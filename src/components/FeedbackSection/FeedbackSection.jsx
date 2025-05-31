@@ -24,7 +24,7 @@ const feedbacks = [
   {
     image: image1,
     videoId: 'z4o1f_LNYlM',
-    text: 'Короткий отзыв 1', // я добавил text, чтобы у картинки был alt и в iframe title
+    text: 'Короткий отзыв 1',
   },
   {
     image: image2,
@@ -54,20 +54,12 @@ const feedbacks = [
 ];
 
 export default function FeedbackSection() {
-  // стейт для модального окна
   const [modalOpen, setModalOpen] = useState(false);
-  // С какого индекса (центрального) открываем слайдер в модалке
   const [startIndex, setStartIndex] = useState(0);
-  // Индекс активного слайда (для модалки)
   const [activeIdx, setActiveIdx] = useState(0);
-  // Реф на слайдер внутри модального окна
   const swiperRef = useRef(null);
-
-  // Дополнительный стейт для основного coverflow-слайдера:
-  // какой индекс сейчас центральный
   const [mainActiveIdx, setMainActiveIdx] = useState(0);
 
-  // Когда открываем модалку — нужно установить стартовый слайд (в модалке)
   const openModalAt = (idx) => {
     setStartIndex(idx);
     setActiveIdx(idx);
@@ -75,10 +67,9 @@ export default function FeedbackSection() {
   };
   const closeModal = () => setModalOpen(false);
 
-  // При открытии модалки перескочим на нужный слайд (без анимации)
   useEffect(() => {
     if (modalOpen && swiperRef.current) {
-      swiperRef.current.slideTo(startIndex, 0); // сразу встанет на startIndex
+      swiperRef.current.slideTo(startIndex, 0);
     }
   }, [modalOpen, startIndex]);
 
@@ -88,74 +79,58 @@ export default function FeedbackSection() {
         <p className={styles.label}>FIKRLAR</p>
         <h2 className={styles.title}>O'quvchilarning fikrlari</h2>
 
-        {/* ==============================
-             Основной слайдер с coverflow-эффектом
-           ============================== */}
-        <Swiper
-          modules={[EffectCoverflow, Pagination]}
-          effect="coverflow"
-          centeredSlides={true}
-          // ставим slidesPerView = 3, чтобы по бокам от центрального было по одному слайду
-          slidesPerView={2}
-          loop={true}
-          spaceBetween={10}
-          coverflowEffect={{
-            rotate: 1,
-            stretch: 0,
-            depth: 100,
-            modifier: 10,
-            slideShadows: true,
-          }}
-          
-          pagination={{ clickable: true }}
-          className={styles.slider}
-          // ловим, когда слайд меняется, чтобы знать currentIndex
-          onSlideChange={(swiper) => {
-            // realIndex = индекс в массиве feedbacks (без учёта loop)
-            setMainActiveIdx(swiper.realIndex);
-          }}
-          onSwiper={(swiper) => {
-            // сразу же запишем начальный индекс (0)
-            setMainActiveIdx(swiper.realIndex);
-          }}
-        >
-          {feedbacks.map((f, i) => (
-            <SwiperSlide key={i} className={styles.slide}>
-              <div className={styles.card}>
-                <img src={f.image} alt={f.text} />
-                {/* 
-                  ▶ Кнопка «play» рендерим только если этот слайд центральный:
-                  проверяем i === mainActiveIdx 
-                */}
-                {i === mainActiveIdx && (
-                  <button
-                    className={styles.playBtn}
-                    onClick={() => openModalAt(i)}
-                  >
-                    ▶
-                  </button>
-                )}
-                {/* Можете показать текст отзыва (если нужен), но у вас не было f.text */}
-                {/* <p className={styles.text}>{f.text}</p> */}
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        {/* ====== ОБЁРТКА: контейнер, в который точно влезают 3 карточки ====== */}
+        <div className={styles.sliderWrapper}>
+          <Swiper
+            modules={[EffectCoverflow, Pagination]}
+            effect="coverflow"
+            centeredSlides={true}
+            slidesPerView= {2}            // ровно 3 карточки “на экране”
+            loop={true}
+            spaceBetween={10}            // отступ между карточками
+            coverflowEffect={{
+              rotate: 0,
+              stretch: 0,
+              depth: 100,
+              modifier: 1.5,             // сближаем боковые слайды
+              slideShadows: true,
+            }}
+            pagination={{ clickable: false }}
+            className={styles.slider}
+            onSlideChange={(swiper) => {
+              setMainActiveIdx(swiper.realIndex);
+            }}
+            onSwiper={(swiper) => {
+              setMainActiveIdx(swiper.realIndex);
+            }}
+          >
+            {feedbacks.map((f, i) => (
+              <SwiperSlide key={i} className={styles.slide}>
+                <div className={styles.card}>
+                  <img src={f.image} alt={f.text} />
+                  {i === mainActiveIdx && (
+                    <button
+                      className={styles.playBtn}
+                      onClick={() => openModalAt(i)}
+                    >
+                      ▶
+                    </button>
+                  )}
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+        {/* ================================================================ */}
       </div>
 
-      {/* ==============================
-           Модальное окно с видео-слайдером
-           ============================== */}
+      {/* ======= Модальное окно с видео-слайдером ======= */}
       {modalOpen && (
         <div className={styles.modalOverlay} onClick={closeModal}>
           <div className={styles.modalBox}>
             <button className={styles.closeBtn} onClick={closeModal}>
               <FiX />
             </button>
-            {/* 
-              Блок, который останавливает propagation, 
-              чтобы клик по внутреннему контенту не закрывал модалку 
-            */}
             <div
               className={styles.modalContent}
               onClick={(e) => e.stopPropagation()}
@@ -175,10 +150,6 @@ export default function FeedbackSection() {
                 {feedbacks.map((f, i) => (
                   <SwiperSlide key={i} className={styles.modalSlide}>
                     <div className={styles.videoWrapper}>
-                      {/* 
-                        ▶ В модалке рендерим iframe только у активного слайда, 
-                        чтобы не грузить все видео сразу 
-                      */}
                       {activeIdx === i && (
                         <iframe
                           src={`https://www.youtube.com/embed/${f.videoId}?autoplay=1&controls=1`}

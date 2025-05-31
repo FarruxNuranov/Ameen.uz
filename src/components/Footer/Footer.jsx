@@ -10,12 +10,13 @@ import {
   FaYoutube,
   FaFacebookF
 } from 'react-icons/fa';
-import { footerLogo } from '../../utils/getImage';
+import { facebook, footerLogo, instagram, telegram, youtube } from '../../utils/getImage';
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={styles.top}>
+    <div className="container">
+    <div className={styles.top}>
         <div className={styles.brand}>
         <img src={footerLogo} alt="Ameen Group" className={styles.logo} />
           <form className={styles.subscribe}>
@@ -57,15 +58,15 @@ export default function Footer() {
           <ul className={styles.contactList}>
             <li>
               <FaMapMarkerAlt className={styles.icon} />
-              <span>123 Mahana Drive<br/>San Francisco, United States</span>
+              <span>International Business Center,<br/>107 B Amir Temur street,</span>
             </li>
             <li>
               <FaEnvelope className={styles.icon} />
-              <span>info@ameengroup.com</span>
+              <span>info@kozimxon.uz</span>
             </li>
             <li>
               <FaPhoneAlt className={styles.icon} />
-              <span>+1800-123-4567</span>
+              <span>+998 91 008 05 09</span>
             </li>
           </ul>
         </div>
@@ -74,12 +75,24 @@ export default function Footer() {
       <div className={styles.bottom}>
         <p>2023 AMEEN GROUP. All rights reserved</p>
         <div className={styles.social}>
-          <a href="#"><FaInstagram /></a>
-          <a href="#"><FaTelegramPlane /></a>
-          <a href="#"><FaYoutube /></a>
-          <a href="#"><FaFacebookF /></a>
+          <a href="#">
+            <img src={instagram} alt="" />
+          </a>
+          <a href="#">
+            <img src={telegram} alt="" />
+          </a>
+          <a href="#">
+            <img src={youtube} alt="" />
+          </a>
+          <a href="#">
+            <img src={facebook} alt="" />
+          </a>
+          
+         
+          
         </div>
       </div>
+    </div>
     </footer>
   );
 }
