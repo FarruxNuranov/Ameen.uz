@@ -1,9 +1,5 @@
 .faq {
-  
   background: #fff;
-  
-
-
 }
 
 .faqbox {
@@ -14,12 +10,12 @@
 }
 
 .label {
-  color: #17b365;
-  font-size: 14px;
-  font-weight: 600;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 8px;
+  color: #17b365;
 
   position: relative;
   display: inline-block;
@@ -45,18 +41,23 @@
 }
 
 .title {
-  font-size: 32px;
-  font-weight: 700;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 144%;
   text-align: center;
-  margin-bottom: 12px;
+  color: #000;
+  margin-top: 16px;
 }
 
 .subtitle {
-  font-size: 16px;
-  color: #555;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 22px;
   text-align: center;
-  margin-bottom: 40px;
-  line-height: 1.5;
+  color: #182f43;
+  margin-top: 16px;
+  margin-bottom: 52px;
 }
 
 .accordion {
@@ -71,10 +72,8 @@
     overflow: hidden;
     transition: background-color 0.4s;
 
-
     &.open {
       background: #f1f8ff;
-
     }
 
     .header {
@@ -89,7 +88,6 @@
       background: transparent;
       border: none;
       cursor: pointer;
-
 
       & span {
         font-family: var(--font-family);
@@ -107,12 +105,14 @@
       transition: transform 0.3s;
 
       &.down {
-        mask: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23000' d='M7 10l5 5 5-5z'/></svg>") center / contain no-repeat;
+        mask: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23000' d='M7 10l5 5 5-5z'/></svg>")
+          center / contain no-repeat;
         background-color: #333;
       }
 
       &.up {
-        mask: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23000' d='M7 14l5-5 5 5z'/></svg>") center / contain no-repeat;
+        mask: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23000' d='M7 14l5-5 5 5z'/></svg>")
+          center / contain no-repeat;
         background-color: #333;
       }
     }

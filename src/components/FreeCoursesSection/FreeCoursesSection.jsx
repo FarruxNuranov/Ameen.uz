@@ -108,7 +108,7 @@ export default function FreeCoursesSection() {
                                     <span className={styles.review}>({c.reviews})</span>
                                 </div>
 
-                                <button className={styles.btn}>Bepul kurslar</button>
+                                <button className={styles.btn}>Hoziroq boshlash</button>
                             </div>
                         </SwiperSlide>
                     ))}

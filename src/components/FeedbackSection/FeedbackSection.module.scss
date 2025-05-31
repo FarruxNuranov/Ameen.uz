@@ -8,11 +8,12 @@
 }
 
 .label {
-  font-weight: 600;
-  font-size: 14px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-bottom: 8px;
-  color: #17b365;
+  color: #17b365; 
   position: relative;
   display: inline-block;
 
@@ -62,15 +63,11 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 30px;           /* ширина зоны градиента слева */
+    width: 30px; /* ширина зоны градиента слева */
     height: 100%;
-    background: linear-gradient(
-      to right,
-      #fff 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
+    background: linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0) 100%);
     pointer-events: none;
-    z-index: 5;             /* поверх слайдера */
+    z-index: 5; /* поверх слайдера */
   }
 
   /* Правый градиент, который плавно скрывает край */
@@ -79,15 +76,11 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 50px;           /* ширина зоны градиента справа */
+    width: 50px; /* ширина зоны градиента справа */
     height: 100%;
-    background: linear-gradient(
-      to left,
-      #fff 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
+    background: linear-gradient(to left, #fff 0%, rgba(255, 255, 255, 0) 100%);
     pointer-events: none;
-    z-index: 5;             /* поверх слайдера */
+    z-index: 5; /* поверх слайдера */
   }
 }
 
@@ -164,7 +157,6 @@
   &.swiper-slide-active img {
     filter: none;
     transform: scale(1.02);
-
   }
 
   .playBtn {

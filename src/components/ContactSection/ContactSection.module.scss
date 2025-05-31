@@ -1,124 +1,132 @@
 .contact {
-    margin-top: 34px;
-    padding: 64px 0;
-    background: #f3f7fb;
-    text-align: center;
-
-
+  margin-top: 34px;
+  padding: 64px 0;
+  background: #f3f7fb;
+  text-align: center;
 }
 
 .label {
-    position: relative;
-    display: inline-block;
-    font-family: var(--font-family);
-    font-weight: 700;
-    font-size: 16px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #17b365;
-    padding: 0 24px;           // отступы, чтобы линии не прилегали вплотную
-  
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 40px;             // длина линии
-      height: 2px;             // толщина линии
-      background-color: #17b365;
-    }
-  
-    &::before {
-      left: -25px;
-    }
-  
-    &::after {
-      right: -25px;
-    }
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #17b365;
+  padding: 0 24px; // отступы, чтобы линии не прилегали вплотную
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px; // длина линии
+    height: 2px; // толщина линии
+    background-color: #17b365;
   }
 
+  &::before {
+    left: -25px;
+  }
+
+  &::after {
+    right: -25px;
+  }
+}
+
 .title {
-    font-size: 32px;
-    font-weight: 700;
-    margin-top: 16px;
-    margin-bottom: 12px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 144%;
+  color: #000;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 .subtitle {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 56px;
-    line-height: 1.5;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 22px;
+  text-align: center;
+  color: #97999d;
 }
 
 .form {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 20px;
-    align-items: center;
-    justify-items: center;
-    margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  margin-top: 20px;
 
-    /* Поле ввода: занимает по 4 колонки */
-    .input {
-        border: 1px solid #97999d;
-        border-radius: 8px;
-        padding: 12px 16px;
-        width: 400px;
-        height: 56px;
-        background: #fff;
+  /* Поле ввода: занимает по 4 колонки */
+  .input {
+    border: 1px solid #97999d;
+    border-radius: 8px;
+    padding: 12px 16px;
+    width: 400px;
+    height: 56px;
+    background: #fff;
+    font-family: var(--third-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.01em;
+    color: #97999d;
+  }
+
+  /* Кнопка: тоже 4 колонки */
+  .button {
+    grid-column: span 4;
+    padding: 14px 0;
+    background: var(--primary);
+
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.01em;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 8px;
+    padding: 16px 41px;
+    width: 318px;
+    height: 56px;
+
+    &:hover {
+      background-color: #090c3b;
     }
-
-    /* Кнопка: тоже 4 колонки */
-    .button {
-        grid-column: span 4;
-        padding: 14px 0;
-        background: var(--primary);
-
-        font-family: var(--font-family);
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 100%;
-        letter-spacing: 0.01em;
-        color: #fff;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        border-radius: 8px;
-        padding: 16px 41px;
-        width: 318px;
-        height: 56px;
-
-        &:hover {
-            background-color: #090c3b;
-        }
-    }
+  }
 }
 
 /* Адаптив */
 @media (max-width: 992px) {
-    .form {
-        .input {
-            grid-column: span 6;
-        }
-
-        .button {
-            grid-column: span 6;
-        }
+  .form {
+    .input {
+      grid-column: span 6;
     }
+
+    .button {
+      grid-column: span 6;
+    }
+  }
 }
 
 @media (max-width: 600px) {
-    .form {
-        grid-template-columns: 1fr;
+  .form {
+    grid-template-columns: 1fr;
 
-        .input,
-        .button {
-            grid-column: span 1;
-        }
-
-        gap: 15px;
+    .input,
+    .button {
+      grid-column: span 1;
     }
+
+    gap: 15px;
+  }
 }
