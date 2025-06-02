@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './CourseOverviewSection.module.scss';
 import { FaPlay } from 'react-icons/fa';
-import { vie1 } from '../../utils/getImage';
+import { PlayButton, vie1 } from '../../utils/getImage';
 
 export default function CourseOverviewSection() {
   return (
@@ -18,7 +18,7 @@ export default function CourseOverviewSection() {
               alt="Course preview"
             />
             <button className={styles.playBtn}>
-              <FaPlay />
+              <img src={PlayButton} alt="" />
             </button>
           </div>
         </div>

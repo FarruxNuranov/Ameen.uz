@@ -14,8 +14,8 @@ const teachers = [
   },
   {
     link: '#',
-    name: 'Guljamol Xudoyberdiyeva',
-    position: 'Senior product designer at Google',
+    name: 'Jahongir Imomnazarov',
+    position: 'Islom Moliyasi',
     photo: teacher2,
   },
 ];

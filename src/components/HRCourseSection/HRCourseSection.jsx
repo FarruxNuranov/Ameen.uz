@@ -1,7 +1,7 @@
 // src/components/HRCourseSection/HRCourseSection.jsx
 import React from 'react';
 import styles from './HRCourseSection.module.scss';
-import {  RQ1, RQ2, RQ3, RQ4 } from '../../utils/getImage';
+import {  PlayButton, RQ1, RQ2, RQ3, RQ4 } from '../../utils/getImage';
 
 // Replace these imports with your actual images
 
@@ -34,7 +34,9 @@ export default function HRCourseSection() {
             <div className={styles.boxBottom}>
               <div className={styles.imageThree}>
                 <img src={RQ4} alt="HR session 3" />
-                <button className={styles.playBtn}></button>
+                <button className={styles.playBtn}>
+                  <img src={PlayButton} alt="" />
+                </button>
               </div>
               <div className={styles.imageFour}>
                 <img src={RQ3} alt="HR session 4" />

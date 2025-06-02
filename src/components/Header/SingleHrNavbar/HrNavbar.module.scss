@@ -112,5 +112,8 @@
   text-align: center;
   color: #fff;
   background: var(--primary);
+    &:hover {
+    background:#182f43;
+    }
 
 }

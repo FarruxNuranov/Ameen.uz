@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styles from './CoursesSection.module.scss';
-import { Courses1, Courses2 } from '../../utils/getImage';
+import { Courses1, Courses2, } from '../../utils/getImage';
 import { Link } from 'react-router-dom';
 
 const courses = [
