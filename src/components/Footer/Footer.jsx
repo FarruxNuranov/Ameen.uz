@@ -10,7 +10,7 @@ import {
   FaYoutube,
   FaFacebookF
 } from 'react-icons/fa';
-import { facebook, footerLogo, instagram, telegram, youtube } from '../../utils/getImage';
+import { facebook, footerLogo, instagram, navLogo, telegram, youtube } from '../../utils/getImage';
 
 export default function Footer() {
   return (
@@ -18,7 +18,7 @@ export default function Footer() {
     <div className="container">
     <div className={styles.top}>
         <div className={styles.brand}>
-        <img src={footerLogo} alt="Ameen Group" className={styles.logo} />
+        <img src={navLogo} alt="Ameen Group" className={styles.logo} />
           <form className={styles.subscribe}>
             <input
               type="tel"
