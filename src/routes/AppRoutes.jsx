@@ -8,6 +8,7 @@ import SingleCoursesPage from '../pages/SingleCoursesPage';
 export default function AppRoutes() {
   return (
     <Routes>
+      
     <Route path="/" element={<Home />} />
     <Route path="/courses" element={<SingleCoursesPage />} />
     </Routes>

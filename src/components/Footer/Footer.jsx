@@ -10,7 +10,7 @@ import {
   FaYoutube,
   FaFacebookF
 } from 'react-icons/fa';
-import { facebook, footerLogo, instagram, navLogo, telegram, youtube } from '../../utils/getImage';
+import { facebook, instagram, navLogo, telegram, youtube } from '../../utils/getImage';
 
 export default function Footer() {
   return (

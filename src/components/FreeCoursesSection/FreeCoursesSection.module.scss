@@ -83,7 +83,7 @@
         align-items: center;
         gap: 6px;
         font-weight: 600;
-
+cursor: pointer;
         .icon {
           width: 18px;
           height: 18px;
@@ -98,6 +98,7 @@
       margin-top: 10px;
       line-height: 1.4;
       padding: 0 16px;
+      cursor: pointer;
     }
 
     .author {
@@ -143,6 +144,7 @@
       margin-top: 17px;
       letter-spacing: 0.01em;
       color: #fff;
+      cursor: pointer;
     }
   }
 
