@@ -1,6 +1,5 @@
-@import '../../../styles/fonts.scss';
-@import '../../../styles/variables.scss';
-
+@import "../../../styles/fonts.scss";
+@import "../../../styles/variables.scss";
 
 .navbar {
   position: fixed;
@@ -15,28 +14,20 @@
 
   // можно добавить тень при скролле
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-
-  
 }
-
 
 .navbarInner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-
 }
 
 .logo {
-  
-
   img {
     width: 102px;
     height: 48px;
   }
-
- 
 }
 
 .navLinks {
@@ -69,8 +60,6 @@
   align-items: center;
   gap: 8px;
   padding: 4px 10px;
- 
-
 
   img {
     width: 24px;
@@ -109,7 +98,6 @@
   text-align: center;
   color: #fff;
   background: var(--primary);
-
 }
 
 .burger {
@@ -129,6 +117,19 @@
   .navLinks,
   .actions {
     display: none;
+  }
+
+  
+  
+
+  .logo {
+    margin-right: 150px;
+    width: 108px;
+    height: 50px;
+
+    & img {
+      width: 100%;
+    }
   }
 
   .burger {

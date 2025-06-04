@@ -75,7 +75,7 @@ export default function FreeCoursesSection() {
                     spaceBetween={20}
                     breakpoints={{
                         0: { slidesPerView: 1 },
-                        500: { slidesPerView: 2 },
+                        500: { slidesPerView: 1 },
                         1024: { slidesPerView: 3 },
                         1300: { slidesPerView: 4 },
                     }}
