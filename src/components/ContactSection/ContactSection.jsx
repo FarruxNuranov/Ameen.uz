@@ -8,7 +8,7 @@ export default function ContactSection() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-toast.success("Вы успешно отправили!");
+    toast.success("Вы успешно отправили!");
     const response = await fetch(
       `https://script.google.com/macros/s/AKfycbzjvlvTzrM0xqtDabu-7NiumhNsf2H25tAroU37Pc3-dzUEOY1gXGK27FtYAopI_5lXjw/exec?name=${encodeURIComponent(
         name
@@ -16,14 +16,16 @@ toast.success("Вы успешно отправили!");
         new Date().toLocaleDateString()
       )}`
     );
-    
+
     const data = await response.json();
 
-    if (data.result === "duplicate") {
-      toast.error("Этот номер уже существует!");
-    } else {
-      toast.error(" Ошибка при отправке.");
-    }
+    // if (data.result === "success") {
+    //   toast.success("✅ Вы успешно отправили!");
+    // } else if (data.result === "duplicate") {
+    //   toast.error("⚠️ Этот номер уже существует!");
+    // } else {
+    //   toast.error("❌ Ошибка при отправке.");
+    // }
 
     setName("");
     setPhone("");

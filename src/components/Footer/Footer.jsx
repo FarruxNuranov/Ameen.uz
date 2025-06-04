@@ -1,98 +1,203 @@
-import React from 'react';
-import styles from './Footer.module.scss';
+// src/components/Footer/Footer.jsx
+import React from "react";
+import styles from "./Footer.module.scss";
 
+import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import {
-  FaMapMarkerAlt,
-  FaEnvelope,
-  FaPhoneAlt,
-  FaInstagram,
-  FaTelegramPlane,
-  FaYoutube,
-  FaFacebookF
-} from 'react-icons/fa';
-import { facebook, instagram, navLogo, telegram, youtube } from '../../utils/getImage';
+  instagram,
+  navLogo,
+  telegram,
+  youtube,
+  facebook,
+} from "../../utils/getImage";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Footer() {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  const scrollToSection = (id) => {
+    if (pathname !== "/") {
+      navigate("/", { replace: true });
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      }, 50);
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className={styles.footer}>
-    <div className="container">
-    <div className={styles.top}>
-        <div className={styles.brand}>
-        <img src={navLogo} alt="Ameen Group" className={styles.logo} />
-          <form className={styles.subscribe}>
-            <input
-              type="tel"
-              placeholder="Telefon raqam"
-              className={styles.input}
-            />
-            <button type="submit" className={styles.button}>
-              Yuborish
-            </button>
-          </form>
-          <p className={styles.note}>
-            Iltimos telefon raqamingizni yozib qoldiring biz siz bilan tez vaqtda bog‘lamiz
-          </p>
+      <div className="container">
+        <div className={styles.top}>
+          {/* Бренд + форма */}
+          <div className={styles.brand}>
+            <img src={navLogo} alt="Ameen Class"  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("navbar");
+                  }} className={styles.logo} />
+            <form className={styles.subscribe}>
+              <input
+                type="tel"
+                placeholder="Telefon raqam"
+                className={styles.input}
+              />
+              <button type="submit" className={styles.button}>
+                Yuborish
+              </button>
+            </form>
+            <p className={styles.note}>
+              Iltimos telefon raqamingizni yozib qoldiring, biz siz bilan tez
+              fursatda bog‘lanamiz
+            </p>
+          </div>
+
+          {/* Навигация */}
+          <div className={styles.column}>
+            <h4>Navigatsiya</h4>
+            <ul>
+              <li>
+                <a
+                  href=""
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("company");
+                  }}
+                >
+                  Kompaniya haqida
+                </a>
+              </li>
+              <li>
+                <a
+                  href=""
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("ustozlar");
+                  }}
+                >
+                  Ustozlar
+                </a>
+              </li>
+              <li>
+                <a
+                  href=""
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("toplamlar");
+                  }}
+                >
+                  To‘plamlar
+                </a>
+              </li>
+              <li>
+                <a
+                  href=""
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("bepul-kurslar");
+                  }}
+                >
+                  Bepul kurslar
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("benefits");
+                  }}
+                >
+                  Afzalliklar
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Маълумотлар */}
+          <div className={styles.column}>
+            <h4>Ma’lumotlar</h4>
+            <ul>
+              <li>
+                <a
+                  href=""
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("partnerlar");
+                  }}
+                >
+                  Partnerlar
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("fikrlar");
+                  }}
+                >
+                  O‘quvchilarning fikrlari
+                </a>
+              </li>
+              <li>
+                <a
+                  href=""
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("faq");
+                  }}
+                >
+                  Tez-tez so‘raladigan savollar
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Контакт */}
+          <div className={styles.column}>
+            <h4>Aloqa uchun</h4>
+            <ul className={styles.contactList}>
+              <li>
+                <FaMapMarkerAlt className={styles.icon} />
+                <span>
+                  International Business Center,
+                  <br />
+                  107 B Amir Temur street,Tashkent
+                </span>
+              </li>
+              <li>
+                <FaEnvelope className={styles.icon} />
+                <span>info@kozimxon.uz</span>
+              </li>
+              <li>
+                <FaPhoneAlt className={styles.icon} />
+                <span>+998 91 008 05 09</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div className={styles.column}>
-          <h4>Information</h4>
-          <ul>
-            <li><a href="#">Company Information</a></li>
-            <li><a href="#">Our Team</a></li>
-            <li><a href="#">Our Vision</a></li>
-            <li><a href="#">Team of Experts</a></li>
-          </ul>
-        </div>
-
-        <div className={styles.column}>
-          <h4>Yordam</h4>
-          <ul>
-            <li><a href="#">Biz haqida</a></li>
-            <li><a href="#">Foydalanuvchi kelishuvi</a></li>
-            <li><a href="#">Kurslar</a></li>
-          </ul>
-        </div>
-
-        <div className={styles.column}>
-          <h4>Contact Information</h4>
-          <ul className={styles.contactList}>
-            <li>
-              <FaMapMarkerAlt className={styles.icon} />
-              <span>International Business Center,<br/>107 B Amir Temur street,</span>
-            </li>
-            <li>
-              <FaEnvelope className={styles.icon} />
-              <span>info@kozimxon.uz</span>
-            </li>
-            <li>
-              <FaPhoneAlt className={styles.icon} />
-              <span>+998 91 008 05 09</span>
-            </li>
-          </ul>
+        {/* Нижняя часть */}
+        <div className={styles.bottom}>
+          <p>2025 AMEEN GROUP. All rights reserved</p>
+          <div className={styles.social}>
+            <a href="https://instagram.com">
+              <img src={instagram} alt="Instagram" />
+            </a>
+            <a href="https://telegram.org">
+              <img src={telegram} alt="Telegram" />
+            </a>
+            <a href="https://youtube.com">
+              <img src={youtube} alt="YouTube" />
+            </a>
+            <a href="https://facebook.com">
+              <img src={facebook} alt="Facebook" />
+            </a>
+          </div>
         </div>
       </div>
-
-      <div className={styles.bottom}>
-        <p>2023 AMEEN GROUP. All rights reserved</p>
-        <div className={styles.social}>
-          <a href="#">
-            <img src={instagram} alt="" />
-          </a>
-          <a href="#">
-            <img src={telegram} alt="" />
-          </a>
-          <a href="#">
-            <img src={youtube} alt="" />
-          </a>
-          <a href="#">
-            <img src={facebook} alt="" />
-          </a>
-          
-         
-          
-        </div>
-      </div>
-    </div>
     </footer>
   );
 }
