@@ -19,6 +19,20 @@ export default function Navbar() {
     }
   };
 
+  const SignUp = () => {
+    window.gtag("event", "click_sign_up", {
+      event_category: "button",
+      event_label: "Записаться",
+    });
+
+    // Скроллим к секции "contact"
+    setTimeout(() => {
+      document
+        .getElementById("contact")
+        ?.scrollIntoView({ behavior: "smooth"  });
+    }, 100); // небольшая задержка – чтобы GA успел отправить событие
+  };
+
   return (
     <header className={styles.navbar}>
       <div className="container">
@@ -83,16 +97,7 @@ export default function Navbar() {
           </nav>
 
           <div className={styles.actions}>
-            <Link
-              onClick={() =>
-                window.gtag("event", "click_sign_up", {
-                  event_category: "button",
-                  event_label: "Записаться",
-                })
-              }
-              to=""
-              className={styles.cta}
-            >
+            <Link onClick={() => SignUp()} to="" className={styles.cta}>
               Ro'yxatdan o'tish
             </Link>
           </div>
