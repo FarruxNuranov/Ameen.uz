@@ -143,3 +143,69 @@
     }
   }
 }
+
+
+@media (max-width: 768px) {
+
+
+  .wrapper{
+    padding-top: 50px;
+  }
+  
+  .imageBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    img {
+      max-width: 280px;
+      height: auto;
+    }
+
+    .notification {
+      position: absolute;
+      top: auto;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: auto;
+      padding: 8px 12px;
+      gap: 8px;
+    }
+
+    .logo {
+      width: 24px;
+      height: 24px;
+    }
+
+    .text {
+      .title {
+        font-size: 14px;
+      }
+
+      .subtitle {
+        font-size: 11px;
+      }
+    }
+  }
+
+  .infoBox {
+    text-align: center;
+
+    .title {
+      font-size: 26px;
+    }
+
+    .text {
+      font-size: 15px;
+      margin-top: 16px;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+}

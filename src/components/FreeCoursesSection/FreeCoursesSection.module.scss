@@ -176,3 +176,19 @@ cursor: pointer;
     }
   }
 }
+
+
+@media (max-width: 500px) {
+  .card {
+    width: 100%;
+    max-width: 282px;
+    margin: 0 auto;
+  }
+
+  .swiper {
+    padding: 0;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

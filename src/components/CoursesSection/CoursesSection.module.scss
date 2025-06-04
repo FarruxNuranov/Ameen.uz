@@ -2,19 +2,17 @@
 
 /* Общие стили для секции */
 .section {
-  padding-top: 64px;     /* Отступ сверху/снизу */
-  background-color: #fff;/* Фон */
- 
+  padding-top: 64px; /* Отступ сверху/снизу */
+  background-color: #fff; /* Фон */
 }
 
 /* wrapper: расположение элементов по вертикали */
 .wrapper {
   display: flex;
-  
-   /* Центрируем по горизонтали */
-  gap: 32px;            /* Расстояние между инфо-картой и строкой карточек */
-}
 
+  /* Центрируем по горизонтали */
+  gap: 32px; /* Расстояние между инфо-картой и строкой карточек */
+}
 
 .navbox {
   position: relative;
@@ -28,15 +26,15 @@
   top: 0;
   /* Отступ от правого края */
   display: flex;
-  gap: 8px;     /* Расстояние между кнопками */
-  z-index: 10;  /* Чтобы кнопки были над слайдами */
+  gap: 8px; /* Расстояние между кнопками */
+  z-index: 10; /* Чтобы кнопки были над слайдами */
 }
 
 /* Стили для каждой кнопки «Prev»/«Next» */
 .nextBtn {
   width: 42px;
   height: 42px;
-  background: #0B0E4E;
+  background: #0b0e4e;
   border: none;
   border-radius: 50%;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
@@ -49,11 +47,10 @@
   transition: background 0.2s ease;
 }
 
-
 .prevBtn {
   width: 42px;
   height: 42px;
-  background: #0B0E4E;
+  background: #0b0e4e;
   border: none;
   border-radius: 50%;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
@@ -68,12 +65,12 @@
 
 /* ===== Левая «Инфо–карта» ===== */
 .infoCard {
-  width: 485px;         /* Точная ширина из макета */
-  height: 441px;        /* Точная высота из макета */
+  width: 485px; /* Точная ширина из макета */
+  height: 441px; /* Точная высота из макета */
   background-color: #0b0e4e;
   color: #fff;
   border-radius: 16px;
-  padding: 32px 24px;   /* Внутренние отступы */
+  padding: 32px 24px; /* Внутренние отступы */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -122,13 +119,13 @@
 /* ===== Ряд статичных карточек курсов ===== */
 .coursesRow {
   display: flex;
-  gap: 24px;            /* Отступ между карточками */
+  gap: 24px; /* Отступ между карточками */
 }
 
 /* Карточка курса (фиксированный размер 386×441) */
 .courseCard {
-  width: 386px;         /* Точная ширина из макета */
-  height: 441px;        /* Точная высота из макета */
+  width: 386px; /* Точная ширина из макета */
+  height: 441px; /* Точная высота из макета */
   border-radius: 16px;
   overflow: hidden;
   position: relative;
@@ -158,5 +155,91 @@
     font-weight: 600;
     font-size: 16px;
     border-radius: 4px;
+  }
+}
+
+.sliderWrapper {
+  width: 100%;
+  max-width: 830px; // 2 карточки + отступ
+}
+
+.courseCard {
+  width: 386px;
+  height: 441px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .courseTitle {
+    z-index: 2;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    padding: 4px 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+}
+
+@media (max-width: 500px) {
+  .courseCard {
+    max-width: 300px;
+    width: 100%;
+    height: 350px;
+  }
+
+  .title {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: #fdfbf8;
+  }
+
+  .desc {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    color: #fff;
+  }
+
+  .label {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #77ecb2;
+  }
+
+  .infoCard {
+    border-radius: 0 9px 9px 0;
+    padding: 16px 20px 16px 16px;
+    width: 186px;
+    height: 350px;
+  }
+
+  .sliderWrapper {
+    max-width: 300px;
+    overflow: hidden;
   }
 }

@@ -27,3 +27,15 @@ a{
   html {
   scroll-padding-top: 80px; // подстраивай под свою высоту хедера
 }
+
+
+@media (max-width: 500px) {
+  .container {
+    padding: 0 12px;
+     // чуть меньше отступы для мобилки
+  }
+
+  html {
+    scroll-padding-top: 70px; // чуть меньше для мобильного хедера
+  }
+}

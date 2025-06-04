@@ -1,9 +1,12 @@
 // src/components/CoursesSection/CoursesSection.jsx
-
-import React from 'react';
+import React, { useRef } from 'react';
 import styles from './CoursesSection.module.scss';
-import { Courses1, Courses2, } from '../../utils/getImage';
+import { Courses1, Courses2 } from '../../utils/getImage';
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const courses = [
   {
@@ -16,24 +19,26 @@ const courses = [
     image: Courses2,
     link: '',
   },
-  // Если нужно добавить ещё карточек, просто добавьте сюда ещё объект(ы)
+  // Можно добавлять ещё
 ];
 
 export default function CoursesSection() {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
   return (
     <section className={styles.section}>
-      {/* Глобальный контейнер */}
       <div className="container">
-        <div className={styles.navbox}>
-        <div className={styles.customNav}>
-        <button className={styles.prevBtn}>←</button>
-        <button className={styles.nextBtn}>→</button>
-        
-         </div>
-        </div>
-      
+        {/* Навигационные стрелки */}
+       <div className={styles.navbox}>
+  <div className={styles.customNav}>
+    <button ref={prevRef} className={styles.prevBtn}>←</button>
+    <button ref={nextRef} className={styles.nextBtn}>→</button>
+  </div>
+</div>
+
         <div className={styles.wrapper}>
-          {/* ===== Левая «Инфо–карта» ===== */}
+          {/* Левая инфо-карта */}
           <div className={styles.infoCard}>
             <p className={styles.label}>TO‘PLAMLAR</p>
             <h2 className={styles.title}>Kurslar to‘plamlari</h2>
@@ -42,29 +47,48 @@ export default function CoursesSection() {
             </p>
           </div>
 
-          {/* ===== Ряд статичных карточек курсов ===== */}
-          <div className={styles.coursesRow}>
-            {courses.map((course, index) => {
-              const isClickable = course.link && course.link.trim() !== '';
-              const content = (
-                <>
-                  <img src={course.image} alt={course.title} />
-                  <div className={styles.courseTitle}>{course.title}</div>
-                </>
-              );
+          {/* Слайдер */}
+          <div className={styles.sliderWrapper}>
+            <Swiper
+              modules={[Navigation]}
+              slidesPerView={1}
+              spaceBetween={24}
+              onBeforeInit={(swiper) => {
+                swiper.params.navigation.prevEl = prevRef.current;
+                swiper.params.navigation.nextEl = nextRef.current;
+              }}
+              breakpoints={{
+                768: {
+                  slidesPerView: 2,
+                },
+              }}
+              navigation={{
+                prevEl: prevRef.current,
+                nextEl: nextRef.current,
+              }}
+            >
+              {courses.map((course, index) => {
+                const isClickable = course.link && course.link.trim() !== '';
+                const content = (
+                  <>
+                    <img src={course.image} alt={course.title} />
+                    <div className={styles.courseTitle}>{course.title}</div>
+                  </>
+                );
 
-              return (
-                <React.Fragment key={index}>
-                  {isClickable ? (
-                    <Link to={course.link} target="_blank" className={styles.courseCard}>
-                      {content}
-                    </Link>
-                  ) : (
-                    <div className={styles.courseCard}>{content}</div>
-                  )}
-                </React.Fragment>
-              );
-            })}
+                return (
+                  <SwiperSlide key={index}>
+                    {isClickable ? (
+                      <Link to={course.link} target="_blank" className={styles.courseCard}>
+                        {content}
+                      </Link>
+                    ) : (
+                      <div className={styles.courseCard}>{content}</div>
+                    )}
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
           </div>
         </div>
       </div>

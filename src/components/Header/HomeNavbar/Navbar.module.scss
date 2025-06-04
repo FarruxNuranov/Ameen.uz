@@ -7,6 +7,7 @@
   top: 0;
   left: 0;
   width: 100%;
+
   background-color: #fff;
   z-index: 999;
   padding: 15px 0;
@@ -15,11 +16,7 @@
   // можно добавить тень при скролле
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  
 }
 
 
@@ -113,4 +110,54 @@
   color: #fff;
   background: var(--primary);
 
+}
+
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #1a1a18;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .navLinks,
+  .actions {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .mobileMenu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px 16px;
+    gap: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    z-index: 998;
+
+    a {
+      font-family: var(--font-family);
+      font-weight: 600;
+      font-size: 16px;
+      color: #1a1a18;
+      text-decoration: none;
+
+      &:hover {
+        color: var(--primary);
+      }
+    }
+  }
 }
