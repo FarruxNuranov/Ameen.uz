@@ -14,10 +14,7 @@
   align-items: center;
   gap: 40px;
 
-  @media (max-width: 768px) {
-    flex-direction: column-reverse;
-    gap: 30px;
-  }
+
 }
 
 .imageBox {
@@ -64,6 +61,7 @@
       line-height: 125%;
       color: #000;
     }
+
     .subtitle {
       font-family: var(--font-family);
       font-weight: 500;
@@ -145,21 +143,24 @@
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
 
 
-  .wrapper{
+  .wrapper {
     padding-top: 50px;
+    padding-bottom: 50px;
+ 
   }
-  
+
   .imageBox {
-    width: 100%;
+    max-width: 500px;
     display: flex;
     justify-content: center;
 
     img {
-      max-width: 280px;
-      height: auto;
+      width: 600px;
+
+
     }
 
     .notification {
@@ -208,4 +209,148 @@
       max-width: 300px;
     }
   }
+}
+
+@media (max-width: 500px) {
+
+
+  .wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  
+  }
+
+
+  .infoBox {
+    flex: 1;
+
+    .label {
+      position: relative;
+      display: inline-block;
+      padding-left: 32px;
+      font-family: var(--font-family);
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #17b365;
+      margin-bottom: 8px;
+
+      position: relative;
+      display: inline-block;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px; // длина линии
+        height: 2px; // толщина линии
+        background-color: #17b365;
+      }
+
+      &::before {
+        left: -15px;
+      }
+    }
+
+    .title {
+      font-family: var(--font-family);
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 125%;
+      color: #182f43;
+    }
+
+    .text {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 160%;
+      color: #182f43;
+    }
+
+    .button {
+      font-family: var(--font-family);
+      font-weight: 600;
+      font-size: 7px;
+      line-height: 143%;
+      letter-spacing: 0.01em;
+      text-align: center;
+      color: #fff;
+      border-radius: 4px;
+      padding: 7px 8px;
+      width: 90px;
+      height: 26px;
+      cursor: pointer;
+      transition: background 0.2s;
+
+      &:hover {
+        background: #090c3b;
+      }
+    }
+  }
+
+
+  .imageBox {
+    position: relative; // важно для абсолютного позиционирования плашки
+    flex: 1;
+
+    img {
+      max-width: 278px;
+      
+    
+      border-radius: 12px;
+      display: block;
+     
+    }
+
+    .notification {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: flex;
+      align-items: center;
+      background: #fff;
+
+      border-radius: 8px;
+      padding: 8px 16px;
+      border: 0.55px solid #e6e8ec;
+      border-radius: 4px;
+      padding: 4px 8px;
+      width: 118px;
+      height: 29px;
+    }
+
+    .logo {
+      flex-shrink: 0;
+      width: 15px;
+      height: 19px;
+      margin-right: 8px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .text {
+      .title {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 8px;
+        line-height: 125%;
+        color: #000;
+      }
+
+      .subtitle {
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 6px;
+        line-height: 133%;
+        color: #000;
+      }
+    }
+  }
+
 }

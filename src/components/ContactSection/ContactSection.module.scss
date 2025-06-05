@@ -118,7 +118,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   .form {
     grid-template-columns: 1fr;
 
@@ -128,5 +128,45 @@
     }
 
     gap: 15px;
+  }
+
+  .title {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    color: #000;
+  }
+
+  .label {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #17b365;
+  }
+
+
+  .subtitle {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 12px;
+    text-align: center;
+    color: #97999d;
+  }
+
+  .button {
+    border-radius: 8px;
+    padding: 16px 41px;
+    width: 343px;
+    height: 56px;
+
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.01em;
+    color: #fff;
   }
 }

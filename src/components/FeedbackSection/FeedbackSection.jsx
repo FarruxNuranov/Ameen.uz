@@ -87,11 +87,14 @@ export default function FeedbackSection() {
             centeredSlides={true}
             slidesPerView= {2}            // ровно 3 карточки “на экране”
             loop={true}
-            spaceBetween={10}            // отступ между карточками
+            spaceBetween={10}      
+            grabCursor={true}
+            initialSlide={mainActiveIdx}
+            c
             coverflowEffect={{
               rotate: 0,
               stretch: 0,
-              depth: 100,
+              depth: 600,
               modifier: 1.5,             // сближаем боковые слайды
               slideShadows: true,
             }}

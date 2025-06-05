@@ -35,7 +35,7 @@ export default function ContactSection() {
     <section className={styles.contact} id="contact">
       <div className="container">
         <p className={styles.label}>ALOQA</p>
-        <h2 className={styles.title}>Biz bilan bog‘lanish</h2>
+        <h2 className={styles.title}>So’rov qoldiring - bilim sari ilk qadam bepul!</h2>
         <p className={styles.subtitle}>
           Ushbu maydonlarni to‘ldiring va yuborish tugmasini bosing!
           <br />

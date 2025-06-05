@@ -64,9 +64,9 @@ export default function SingleCoursesPage() {
       </section>
 
       {/* Скачивание материалов */}
-      <section id="download">
+      {/* <section id="download">
         <DownloadSection />
-      </section>
+      </section> */}
 
       {/* Футер */}
       <Footer />

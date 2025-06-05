@@ -165,18 +165,34 @@
 }
 
 /* Адаптив */
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .footer {
     .top {
-      justify-content: center;
+      justify-content: start;
       text-align: center;
 
       .brand {
         align-items: center;
+
+        .button {
+          display: none;
+        }
+
+        .note {
+          display: none;
+        }
+        
       }
+
+      .input{
+        display: none;
+      }
+
+     
 
       .column {
         min-width: 140px;
+        justify-items: start;
       }
     }
 

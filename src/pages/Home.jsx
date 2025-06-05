@@ -22,57 +22,57 @@ export default function Home() {
       </section>
 
 
-      {/* Hero Section */}
+
       <section id="hero">
         <HeroSection />
       </section>
 
-      {/* Ustozlar Section */}
+      
       <section id="ustozlar">
         <TeachersSection />
       </section>
 
-      {/* Partnerlar Section */}
+   
       <section id="partnerlar">
         <PartnersSection />
       </section>
 
-      {/* To’plamlar Section */}
+    
       <section id="toplamlar">
         <CoursesSection />
       </section>
 
-      {/* Bepul kurslar Section */}
+     
       <section id="bepul-kurslar">
         <FreeCoursesSection />
       </section>
 
-      {/* Benefits Section */}
+    
       <section id="benefits">
         <BenefitsSection />
       </section>
 
-      {/* Fikrlar Section */}
+      
       <section id="fikrlar">
         <FeedbackSection />
       </section>
 
-      {/* Contact Section */}
+     
       <section id="contact">
         <ContactSection />
       </section>
 
-      {/* FAQ Section */}
+     
       <section id="faq">
         <FaqSection />
       </section>
 
-      {/* Download Section */}
-      <section id="download">
+     
+      {/* <section id="download">
         <DownloadSection />
-      </section>
+      </section> */}
 
-      {/* Footer */}
+     
       <Footer />
     </>
   );

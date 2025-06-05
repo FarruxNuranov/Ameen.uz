@@ -258,7 +258,7 @@ h1 {
    ---------------------------- */
 @media (max-width: 1000px) {
     .wrapper {
-        justify-content: center;
+        justify-content: end;
     }
 
     .content {
@@ -272,7 +272,7 @@ h1 {
         margin-left: 0;
 
         &::before {
-            left: calc(50% - 32px);
+            left: calc(50% - 200px);
         }
     }
 

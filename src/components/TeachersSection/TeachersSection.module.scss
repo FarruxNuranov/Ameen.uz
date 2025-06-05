@@ -114,3 +114,14 @@
         }
     }
 }
+
+
+@media (max-width: 1000px)  {
+    .card {
+        min-width: 343px;
+        width: 100%;
+        min-height: 188px;
+        height: 100%;
+    }
+    
+}

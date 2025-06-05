@@ -13,7 +13,7 @@
   font-size: 16px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #17b365; 
+  color: #17b365;
   position: relative;
   display: inline-block;
 
@@ -55,7 +55,8 @@
   overflow: hidden;
   /* При желании можно добавить padding сверху/снизу */
   /* padding: 0 0 40px; */
-  position: relative; /* важно для псевдоэлементов */
+  position: relative;
+  /* важно для псевдоэлементов */
 
   /* Левый градиент, который плавно скрывает край */
   &::before {
@@ -63,11 +64,13 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 30px; /* ширина зоны градиента слева */
+    width: 30px;
+    /* ширина зоны градиента слева */
     height: 100%;
     background: linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0) 100%);
     pointer-events: none;
-    z-index: 5; /* поверх слайдера */
+    z-index: 5;
+    /* поверх слайдера */
   }
 
   /* Правый градиент, который плавно скрывает край */
@@ -76,11 +79,13 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 50px; /* ширина зоны градиента справа */
+    width: 50px;
+    /* ширина зоны градиента справа */
     height: 100%;
     background: linear-gradient(to left, #fff 0%, rgba(255, 255, 255, 0) 100%);
     pointer-events: none;
-    z-index: 5; /* поверх слайдера */
+    z-index: 5;
+    /* поверх слайдера */
   }
 }
 
@@ -89,7 +94,7 @@
 .slider {
   /* ширина 100% уже ограничена .sliderWrapper */
   width: 100%;
-  padding-bottom: 40px;
+
 
   /* ПАГИНАЦИЯ (таблетки) остаётся без изменений */
   :global(.swiper-pagination) {
@@ -147,6 +152,7 @@
 
   img {
     width: 100%;
+    border-radius: 12px;
     height: 100%;
     object-fit: cover;
     filter: brightness(0.6);
@@ -167,8 +173,12 @@
     font-size: 32px;
     background: #fff;
     border-radius: 50%;
-    width: 72px;
-    height: 72px;
+    max-width: 72px;
+    width: 100%;
+    max-height: 72px;
+    height: 100%;
+
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -299,4 +309,120 @@
 
 .nextBtn {
   right: 12px;
+}
+
+
+@media (max-width: 500px) {
+
+  .card {
+    min-width: 280px;
+    width: 100%;
+    min-height: 160px;
+    height: 100%;
+
+    &img {
+      width: 100%;
+
+      object-fit: cover;
+      filter: brightness(0.6);
+      transition: filter 0.3s, transform 0.3s;
+    }
+  }
+
+  .title {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    color: #000;
+  }
+
+  .label {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #17b365;
+  }
+
+  .slider {
+    /* ширина 100% уже ограничена .sliderWrapper */
+    width: 100%;
+
+
+    /* ПАГИНАЦИЯ (таблетки) остаётся без изменений */
+    :global(.swiper-pagination) {
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      gap: 8px;
+      position: static;
+      padding-top: 18px;
+
+      :global(.swiper-pagination-bullet) {
+     
+        width: 6px; 
+        height: 28px;
+        border-radius: 3px !important;
+        background: rgba(11, 14, 78, 0.3) !important;
+        opacity: 1 !important;
+        margin: 0 !important;
+        transition: background 0.3s, width 0.3s;
+      }
+
+      :global(.swiper-pagination-bullet-active) {
+        background: #0b0e4e !important;
+        border-radius: 3px;
+        width: 6px;
+        height: 83px;
+      }
+    }
+  }
+
+
+
+
+  .sliderWrapper {
+    /* 3 карточки шириной 662px + 2 промежутка по 10px */
+    width: calc(662px * 3 + 10px * 2);
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    /* При желании можно добавить padding сверху/снизу */
+    /* padding: 0 0 40px; */
+    position: relative;
+    /* важно для псевдоэлементов */
+
+    /* Левый градиент, который плавно скрывает край */
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      /* ширина зоны градиента слева */
+      height: 100%;
+      background: none;
+      pointer-events: none;
+      z-index: 5;
+      /* поверх слайдера */
+    }
+
+    /* Правый градиент, который плавно скрывает край */
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50px;
+      /* ширина зоны градиента справа */
+      height: 100%;
+      background: none;
+      pointer-events: none;
+      z-index: 5;
+      /* поверх слайдера */
+    }
+  }
 }

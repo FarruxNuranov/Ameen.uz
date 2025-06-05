@@ -38,11 +38,13 @@ export default function Navbar() {
   return (
     <header className={styles.navbar} id="navbar">
       <div className="container">
-        <div className={styles.navbarInner}>
-          {/* Бургер */}
-          <button className={styles.burger} onClick={toggleMenu}>
+        <div className={styles.burgerBox}>
+        <button className={styles.burger} onClick={toggleMenu}>
             {isOpen ? <FiX /> : <FiMenu />}
           </button>
+          <div className={styles.navbarInner}>
+          {/* Бургер */}
+       
 
           {/* Логотип */}
           <Link
@@ -70,6 +72,8 @@ export default function Navbar() {
             Ro'yxatdan o'tish
           </Link>
         </div>
+        </div>
+      
 
         {/* Мобильное меню */}
         {isOpen && (
