@@ -43,10 +43,7 @@ export default function Navbar() {
             {isOpen ? <FiX /> : <FiMenu />}
           </button>
           <div className={styles.navbarInner}>
-          {/* Бургер */}
-       
-
-          {/* Логотип */}
+         
           <Link
             to="/"
             className={styles.logo}

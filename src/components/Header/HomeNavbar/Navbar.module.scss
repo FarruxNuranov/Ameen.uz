@@ -24,9 +24,13 @@
 }
 
 .logo {
-  img {
-    width: 102px;
-    height: 48px;
+width: 100%;
+
+
+  & img {
+    max-width: 102px;
+    width: 100%;
+    
   }
 }
 
@@ -132,7 +136,7 @@
   
 
   .logo {
-    margin-right: 150px;
+  
     width: 108px;
     height: 50px;
 
@@ -143,6 +147,7 @@
 
   .burger {
     display: block;
+    width: 100%;
   }
 
   .mobileMenu {
@@ -180,18 +185,14 @@
   
   
 
-  .logo {
-    margin-right: 150px;
-    width: 108px;
-    height: 50px;
-
-    & img {
-      width: 100%;
-    }
+  .navbarInner {
+    gap: 60px;
   }
+
 
   .burger {
     display: block;
+    
   }
 
   .mobileMenu {
