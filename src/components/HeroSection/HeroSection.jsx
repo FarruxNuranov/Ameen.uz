@@ -1,7 +1,7 @@
 // src/components/HeroSection/HeroSection.jsx
 import React, { useState, useEffect } from 'react';
 import styles from './HeroSection.module.scss';
-import { heroBackground, Play, PlayButton, playmini } from '../../utils/getImage';
+import { heroBackground, Play,  } from '../../utils/getImage';
 
 export default function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -24,7 +24,7 @@ export default function HeroSection() {
   return (
     <section
       className={styles.hero}
-      style={{ backgroundImage: `url(${heroBackground})`, paddingTop: '80px' }}
+      style={{ backgroundImage: `url(${heroBackground})`, }}
     >
       <div className="container">
         <div className={styles.wrapper}>
