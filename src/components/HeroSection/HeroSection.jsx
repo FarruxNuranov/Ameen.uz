@@ -1,7 +1,7 @@
 // src/components/HeroSection/HeroSection.jsx
 import React, { useState, useEffect } from 'react';
 import styles from './HeroSection.module.scss';
-import { heroBackground } from '../../utils/getImage';
+import { heroBackground, Play, PlayButton, playmini } from '../../utils/getImage';
 
 export default function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -41,7 +41,7 @@ export default function HeroSection() {
                 onClick={() => setIsModalOpen(true)}
               >
                 <span className={styles.play}>
-                  <span className={styles.playmini}>▶</span>
+                  <span className={styles.playmini}><img src={Play} alt="" /></span>
                 </span>{' '}
                 SEE OUR ACTIVITY
               </button>

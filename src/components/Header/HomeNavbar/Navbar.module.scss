@@ -24,20 +24,17 @@
 }
 
 .logo {
-width: 200px;
-
+  width: 103px;
+  height: 52px;
 
   & img {
-    max-width: 102px;
     width: 100%;
-    
   }
 }
 
 .navLinks {
   display: flex;
   gap: 56px;
-  
 
   a {
     font-family: var(--font-family);
@@ -108,7 +105,7 @@ width: 200px;
   display: flex;
   align-items: center;
   gap: 20px;
- 
+  
 }
 
 .burger {
@@ -130,13 +127,7 @@ width: 200px;
     display: none;
   }
 
-
-
-  
-  
-
   .logo {
-  
     width: 108px;
     height: 50px;
 
@@ -147,7 +138,10 @@ width: 200px;
 
   .burger {
     display: block;
-    width: 100%;
+    width: 25px;
+   
+    
+    
   }
 
   .mobileMenu {
@@ -182,17 +176,12 @@ width: 200px;
     display: none;
   }
 
-  
-  
-
   .navbarInner {
     gap: 60px;
   }
 
-
   .burger {
     display: block;
-    
   }
 
   .mobileMenu {
