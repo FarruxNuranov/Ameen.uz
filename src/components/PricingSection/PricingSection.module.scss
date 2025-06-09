@@ -51,7 +51,7 @@
 
     .cards {
         display: flex;
-        gap: 20px;
+        gap: 10px;
         justify-content: center;
         flex-wrap: wrap;
         margin-top: 64px;
@@ -153,10 +153,28 @@
         }
     }
 
-    @media (max-width: 768px) {
-        .cards {
-            flex-direction: column;
-            align-items: center;
-        }
-    }
+/* Добавляем на мобилке (до 768px) горизонтальный скролл-слайдер и центрирование карточек */
+/* Существующие у вас стили остаются без изменений */
+
+.cards {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  /* при больших экранах карточки выровнены по центру */
+}
+
+/* Добавляем медиа-запрос для мобильных */
+@media (max-width: 500px) {
+  .cards {
+    overflow-x: auto;                  /* включаем горизонтальный скролл */
+    -webkit-overflow-scrolling: touch; /* плавный скролл на iOS */
+    flex-wrap: nowrap;                 /* не переносить карточки на новую строку */
+    padding: 0 16px;                   /* отступы справа/слева */
+  }
+
+  .card {
+    flex: 0 0 80%;    /* задаём базовую ширину карточки в 80% от контейнера */
+    min-width: 280px; /* и минимальную ширину, чтобы карточка не сжималась слишком сильно */
+  }
+}
 }
