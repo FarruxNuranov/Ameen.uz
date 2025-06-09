@@ -216,7 +216,16 @@ h1 {
   .hero {
     min-height: 100vh;
     background-size: cover;
-    background-position: start;
+    background-position: 15% center;
+
+
+      &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(80deg, #000046 30%, rgba(43, 50, 178, 0) 70%);
+    z-index: 1;
+  }
   }
 
   .content {
@@ -307,57 +316,5 @@ h1 {
     height: 56px;
     border: 2px solid #fff;
     border-radius: 100%;
-  }
-}
-
-/* ----------------------------
-   Max-Width: 400px
-   ---------------------------- */
-@media (max-width: 400px) {
-  .hero {
-    min-height: 50vh;
-  }
-
-  .content {
-    max-width: 220px;
-    padding: 16px 0;
-    gap: 12px;
-  }
-
-  .label {
-    font-size: 10px;
-
-    &::before {
-      width: 16px;
-      left: calc(50% - 16px);
-    }
-  }
-
-  h1 {
-    font-size: 22px;
-  }
-
-  .subtitle {
-    font-size: 13px;
-  }
-
-  .buttons {
-    .primary {
-      width: 100%;
-      max-width: 120px;
-      height: 38px;
-      font-size: 11px;
-      padding: 6px 8px;
-    }
-
-    .secondary {
-      font-size: 10px;
-
-      .play {
-        width: 32px;
-        height: 32px;
-        font-size: 8px;
-      }
-    }
   }
 }
