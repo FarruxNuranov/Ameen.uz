@@ -12,7 +12,7 @@ export default function FreeTrialSection() {
           {/* Слева: Play-кнопка */}
           <div className={styles.playWrapper}>
             <button className={styles.playBtn}>
-              <FaPlay />
+              <FaPlay className={styles.FaPlay} />
             </button>
           </div>
 

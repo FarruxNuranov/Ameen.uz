@@ -100,14 +100,12 @@ export default function HrNavbar() {
                 Fikrlar
               </NavLink>
             </nav>
-
-            
-          </div>
-          <div className={styles.actions}>
+            <div className={styles.actions}>
               <Link to="/signup" className={styles.cta} onClick={closeMenu}>
                 Ro'yxatdan o'tish
               </Link>
             </div>
+          </div>
         </div>
 
         {isOpen && (
@@ -157,7 +155,6 @@ export default function HrNavbar() {
             >
               Fikrlar
             </NavLink>
-         
           </div>
         )}
       </div>

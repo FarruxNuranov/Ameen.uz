@@ -91,9 +91,8 @@
     cursor: pointer;
     transition: all 0.3s;
 
-
     &:hover {
-    background:#182f43;
+      background: #182f43;
     }
   }
 }
@@ -148,7 +147,7 @@
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    
+
     border: none;
     cursor: pointer;
     transition: all 0.3s;
@@ -262,4 +261,51 @@
       transform: translate(-50%, -50%) scale(1.1);
     }
   }
+}
+
+@media (max-width: 500px) {
+
+.textBlock {
+ .label {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #17b365;
+  }
+
+  .title {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 133%;
+    color: #182f43;
+  }
+
+  .desc {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 183%;
+    color: #182f43;
+  }
+
+  .button {
+    border-radius: 8px;
+    padding: 14px 16px;
+    width: 166px;
+    height: 48px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 143%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #fff;
+  }
+
+
+
+}
 }

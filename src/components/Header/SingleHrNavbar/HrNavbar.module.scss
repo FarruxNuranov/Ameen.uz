@@ -184,13 +184,22 @@
   }
 }
 @media (max-width: 500px) {
-  .navLinks,
-  .actions {
-    display: none;
+  .navLinks {
+display: none;
   }
 
+   
+   
+  
+  .actions {
+    display: block;
+
+  }
+ 
+
   .navbarInner {
-    gap: 60px;
+    justify-content: space-between;
+    
   }
 
   .burger {
