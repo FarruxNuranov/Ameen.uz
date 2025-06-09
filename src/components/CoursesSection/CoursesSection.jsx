@@ -1,23 +1,23 @@
 // src/components/CoursesSection/CoursesSection.jsx
-import React, { useRef } from 'react';
-import styles from './CoursesSection.module.scss';
-import { Courses1, Courses2 } from '../../utils/getImage';
-import { Link } from 'react-router-dom';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
+import React, { useRef } from "react";
+import styles from "./CoursesSection.module.scss";
+import { Courses1, Courses2, nextBtn, prevBtn } from "../../utils/getImage";
+import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
 const courses = [
   {
-    title: 'HR Kurs To‘plam',
+    title: "HR Kurs To‘plam",
     image: Courses1,
-    link: '/courses',
+    link: "/courses",
   },
   {
-    title: 'Islom Moliya Kurs To‘plam',
+    title: "Islom Moliya Kurs To‘plam",
     image: Courses2,
-    link: '',
+    link: "",
   },
   // Можно добавлять ещё
 ];
@@ -30,12 +30,16 @@ export default function CoursesSection() {
     <section className={styles.section}>
       <div className="container">
         {/* Навигационные стрелки */}
-       <div className={styles.navbox}>
-  <div className={styles.customNav}>
-    <button ref={prevRef} className={styles.prevBtn}>←</button>
-    <button ref={nextRef} className={styles.nextBtn}>→</button>
-  </div>
-</div>
+        <div className={styles.navbox}>
+          <div className={styles.customNav}>
+            <button ref={prevRef} className={styles.prevBtn}>
+               <img src={prevBtn} alt="" />
+            </button>
+            <button ref={nextRef} className={styles.nextBtn}>
+               <img src={nextBtn} alt="" />
+            </button>
+          </div>
+        </div>
 
         <div className={styles.wrapper}>
           {/* Левая инфо-карта */}
@@ -43,8 +47,17 @@ export default function CoursesSection() {
             <p className={styles.label}>TO‘PLAMLAR</p>
             <h2 className={styles.title}>Kurslar to‘plamlari</h2>
             <p className={styles.desc}>
-              To‘plamlar orqali bir yo‘nalishdagi kursni to‘liq va mukammal holatda o‘rganing
+              To‘plamlar orqali bir yo‘nalishdagi kursni to‘liq va mukammal
+              holatda o‘rganing
             </p>
+            <div className={styles.custombuttons}>
+              <button ref={prevRef} className={styles.prevBtn}>
+                <img src={prevBtn} alt="" />
+              </button>
+              <button ref={nextRef} className={styles.nextBtn}>
+                <img src={nextBtn} alt="" />
+              </button>
+            </div>
           </div>
 
           {/* Слайдер */}
@@ -68,7 +81,7 @@ export default function CoursesSection() {
               }}
             >
               {courses.map((course, index) => {
-                const isClickable = course.link && course.link.trim() !== '';
+                const isClickable = course.link && course.link.trim() !== "";
                 const content = (
                   <>
                     <img src={course.image} alt={course.title} />
@@ -79,7 +92,11 @@ export default function CoursesSection() {
                 return (
                   <SwiperSlide key={index}>
                     {isClickable ? (
-                      <Link to={course.link} target="_blank" className={styles.courseCard}>
+                      <Link
+                        to={course.link}
+                        target="_blank"
+                        className={styles.courseCard}
+                      >
                         {content}
                       </Link>
                     ) : (

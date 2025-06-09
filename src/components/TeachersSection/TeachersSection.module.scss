@@ -1,127 +1,130 @@
 .teachers {
-    padding-top: 120px;
-    text-align: center;
+  padding-top: 120px;
+  text-align: center;
 
-    .label {
-        font-family: var(--font-family);
-        font-weight: 700;
-        font-size: 16px;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: #17b365;
-        position: relative;
-        display: inline-block;
+  .label {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #17b365;
+    position: relative;
+    display: inline-block;
 
-        &::before,
-        &::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 40px; // длина линии
-            height: 2px; // толщина линии
-            background-color: #17b365;
-        }
-
-        &::before {
-            left: -45px;
-        }
-
-        &::after {
-            right: -45px;
-        }
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px; // длина линии
+      height: 2px; // толщина линии
+      background-color: #17b365;
     }
 
-    .title {
-        font-family: var(--font-family);
-        font-weight: 700;
-        font-size: 36px;
-        line-height: 144%;
-        color: #000;
+    &::before {
+      left: -45px;
     }
 
-    .subtitle {
-        font-family: var(--font-family);
-        font-weight: 400;
-        font-size: 22px;
-        color: #182f43;
-        margin-top: 16px;
+    &::after {
+      right: -45px;
     }
+  }
+
+  .title {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 144%;
+    color: #000;
+  }
+
+  .subtitle {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 22px;
+    color: #182f43;
+    margin-top: 16px;
+  }
 }
 
 .list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
 }
 
 .card {
-    position: relative;
-    border-radius: 16px;
-    width: 584px;
-    height: 320px;
-    overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    cursor: pointer;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: 300ms;
-    margin-top: 40px;
+  position: relative;
+  border-radius: 16px;
+  width: 584px;
+  height: 320px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: 300ms;
+  margin-top: 40px;
 
-    &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), transparent);
+    color: white;
+    text-align: left;
+
+    h3 {
+      font-family: var(--font-family);
+      font-weight: 700;
+      font-size: 24px;
+      letter-spacing: 0.01em;
+      color: #fff;
+
+      span {
+        font-size: 14px;
+        margin-left: 4px;
+      }
     }
 
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
+    p {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 146%;
+      letter-spacing: 0.01em;
+      color: #fff;
     }
-
-    .overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 20px;
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), transparent);
-        color: white;
-        text-align: left;
-
-        h3 {
-            font-family: var(--font-family);
-            font-weight: 700;
-            font-size: 24px;
-            letter-spacing: 0.01em;
-            color: #fff;
-
-            span {
-                font-size: 14px;
-                margin-left: 4px;
-            }
-        }
-
-        p {
-            font-family: var(--font-family);
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 146%;
-            letter-spacing: 0.01em;
-            color: #fff;
-        }
-    }
+  }
 }
 
+@media (max-width: 1000px) {
+  .card {
+    border-radius: 8px;
+   
+    width: 100%;
+    max-height: 250px;
+    height: 100%;
+  }
 
-@media (max-width: 1000px)  {
-    .card {
-        min-width: 343px;
-        width: 100%;
-        min-height: 188px;
-        height: 100%;
-    }
-    
+
+  .list{
+    gap: 10px;
+  }
 }
