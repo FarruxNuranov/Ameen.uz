@@ -1,5 +1,5 @@
 // src/components/CoursesSection/CoursesSection.jsx
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import styles from "./CoursesSection.module.scss";
 import { Courses1, Courses2, nextBtn, prevBtn } from "../../utils/getImage";
 import { Link } from "react-router-dom";
@@ -19,12 +19,27 @@ const courses = [
     image: Courses2,
     link: "",
   },
-  // Можно добавлять ещё
 ];
 
 export default function CoursesSection() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  const swiperRef = useRef(null);
+
+  useEffect(() => {
+    if (
+      swiperRef.current &&
+      swiperRef.current.params?.navigation &&
+      prevRef.current &&
+      nextRef.current
+    ) {
+      swiperRef.current.params.navigation.prevEl = prevRef.current;
+      swiperRef.current.params.navigation.nextEl = nextRef.current;
+      swiperRef.current.navigation.destroy();
+      swiperRef.current.navigation.init();
+      swiperRef.current.navigation.update();
+    }
+  }, []);
 
   return (
     <section className={styles.section}>
@@ -33,10 +48,10 @@ export default function CoursesSection() {
         <div className={styles.navbox}>
           <div className={styles.customNav}>
             <button ref={prevRef} className={styles.prevBtn}>
-               <img src={prevBtn} alt="" />
+              <img src={prevBtn} alt="Previous" />
             </button>
             <button ref={nextRef} className={styles.nextBtn}>
-               <img src={nextBtn} alt="" />
+              <img src={nextBtn} alt="Next" />
             </button>
           </div>
         </div>
@@ -47,15 +62,14 @@ export default function CoursesSection() {
             <p className={styles.label}>TO‘PLAMLAR</p>
             <h2 className={styles.title}>Kurslar to‘plamlari</h2>
             <p className={styles.desc}>
-              To‘plamlar orqali bir yo‘nalishdagi kursni to‘liq va mukammal
-              holatda o‘rganing
+              To‘plamlar orqali bir yo‘nalishdagi kursni to‘liq va mukammal holatda o‘rganing
             </p>
             <div className={styles.custombuttons}>
               <button ref={prevRef} className={styles.prevBtn}>
-                <img src={prevBtn} alt="" />
+                <img src={prevBtn} alt="Previous" />
               </button>
               <button ref={nextRef} className={styles.nextBtn}>
-                <img src={nextBtn} alt="" />
+                <img src={nextBtn} alt="Next" />
               </button>
             </div>
           </div>
@@ -66,10 +80,7 @@ export default function CoursesSection() {
               modules={[Navigation]}
               slidesPerView={1}
               spaceBetween={24}
-              onBeforeInit={(swiper) => {
-                swiper.params.navigation.prevEl = prevRef.current;
-                swiper.params.navigation.nextEl = nextRef.current;
-              }}
+              onSwiper={(swiper) => (swiperRef.current = swiper)}
               breakpoints={{
                 768: {
                   slidesPerView: 2,
