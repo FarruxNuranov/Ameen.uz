@@ -5,12 +5,13 @@ import HRCourseSection from '../components/HRCourseSection/HRCourseSection';
 import FreeTrialSection from '../components/FreeTrialSection/FreeTrialSection';
 import CourseOverviewSection from '../components/CourseOverviewSection/CourseOverviewSection';
 import CourseCurriculumSection from '../components/CourseCurriculumSection/CourseCurriculumSection';
-import TeachersSection from '../components/TeachersSection/TeachersSection';
+
 import PartnersSection from '../components/PartnersSection/PartnersSection';
 import PricingSection from '../components/PricingSection/PricingSection';
 import FeedbackSection from '../components/FeedbackSection/FeedbackSection';
 import DownloadSection from '../components/DownloadSection/DownloadSection';
 import Footer from '../components/Footer/Footer';
+import TeacherHR from '../components/TeacherHR/TeacherHR';
 
 export default function SingleCoursesPage() {
   return (
@@ -45,7 +46,7 @@ export default function SingleCoursesPage() {
 
       {/* Преподаватели */}
       <section id="teachers">
-        <TeachersSection />
+        <TeacherHR />
       </section>
 
       {/* Партнёры */}
