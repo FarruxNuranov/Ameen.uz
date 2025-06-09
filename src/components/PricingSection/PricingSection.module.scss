@@ -1,181 +1,180 @@
 /* PricingSection.module.scss */
 .pricingSection {
-    padding: 50px 0;
+  padding: 50px 0;
 
+  text-align: center;
+
+  .subtitle {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     text-align: center;
+    color: #17b365;
 
+    position: relative;
+    display: inline-block;
 
-
-    .subtitle {
-        font-family: var(--font-family);
-        font-weight: 700;
-        font-size: 16px;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        text-align: center;
-        color: #17b365;
-
-        position: relative;
-      display: inline-block;
-
-      &::before,
-      &::after {
-          content: "";
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 40px; // длина линии
-          height: 2px; // толщина линии
-          background-color: #17b365;
-      }
-
-      &::before {
-          left: -45px;
-      }
-
-      &::after {
-          right: -45px;
-      }
-
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px; // длина линии
+      height: 2px; // толщина линии
+      background-color: #17b365;
     }
 
-    .title {
-        font-family: var(--font-family);
-        font-weight: 700;
-        font-size: 36px;
-        line-height: 117%;
-        letter-spacing: 0.01em;
-        text-align: center;
-        color: #1c1c1c;
+    &::before {
+      left: -45px;
     }
 
-    .cards {
-        display: flex;
-        gap: 10px;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-top: 64px;
+    &::after {
+      right: -45px;
     }
+  }
 
-    .card {
-        border: 2px solid #e6e8ec;
-        border-radius: 8px;
-        width: 339px;
-        height: 638px;
-        display: flex;
-        margin: 10px 0;
-        flex-direction: column;
-        padding: 24px;
-        transition: transform 0.3s;
+  .title {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 117%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #1c1c1c;
+  }
 
-        &:hover {
-           
-            background: #eff6ff;
-            border-color: #bfdbfe;
-        }
-    }
-
-
-
-    .cardHeader {
-        margin-bottom: 16px;
-
-        .planName {
-            font-family: var(--third-family);
-            font-weight: 500;
-            font-size: 22px;
-            line-height: 159%;
-            color: #182f43;
-        }
-
-        .price {
-            font-family: var(--font-family);
-            font-weight: 700;
-            font-size: 32px;
-            line-height: 112%;
-            text-align: center;
-            color: #182f43;
-
-            span {
-                font-family: var(--font-family);
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 160%;
-                color: #182f43;
-            }
-        }
-    }
-
-    .spanImg {
-        margin-right: 16px;
-    }
-
-    .features {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 24px;
-        text-align: left;
-
-        .featureItem {
-            display: flex;
-            align-items: center;
-            margin-bottom: 12px;
-            font-size: 0.9375rem;
-            color: #374151;
-
-            svg {
-                margin-right: 8px;
-                font-size: 1.125rem;
-            }
-        }
-
-        .unavailable {
-            color: #9ca3af;
-
-            svg {
-                opacity: 0.5;
-            }
-        }
-    }
-
-    .button {
-        margin-top: auto;
-        background: #3b82f6;
-        color: #fff;
-        border: none;
-        border-radius: 6px;
-        padding: 12px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background 0.3s;
-
-        &:hover {
-            background: #2563eb;
-        }
-    }
-
-/* Добавляем на мобилке (до 768px) горизонтальный скролл-слайдер и центрирование карточек */
-/* Существующие у вас стили остаются без изменений */
-
-.cards {
-  display: flex;
-  gap: 24px;
-  justify-content: center;
-  /* при больших экранах карточки выровнены по центру */
-}
-
-/* Добавляем медиа-запрос для мобильных */
-@media (max-width: 500px) {
   .cards {
-    overflow-x: auto;                  /* включаем горизонтальный скролл */
-    -webkit-overflow-scrolling: touch; /* плавный скролл на iOS */
-    flex-wrap: nowrap;                 /* не переносить карточки на новую строку */
-    padding: 0 16px;                   /* отступы справа/слева */
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 64px;
   }
 
   .card {
-    flex: 0 0 80%;    /* задаём базовую ширину карточки в 80% от контейнера */
-    min-width: 280px; /* и минимальную ширину, чтобы карточка не сжималась слишком сильно */
+    border: 2px solid #e6e8ec;
+    border-radius: 8px;
+    width: 339px;
+    height: 638px;
+    display: flex;
+    margin: 10px 0;
+    flex-direction: column;
+    padding: 24px;
+    transition: transform 0.3s;
+
+    &:hover {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+    }
   }
-}
+
+  .cardHeader {
+    margin-bottom: 16px;
+
+    .planName {
+      font-family: var(--third-family);
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 159%;
+      color: #182f43;
+    }
+
+    .price {
+      font-family: var(--font-family);
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 112%;
+      text-align: center;
+      color: #182f43;
+
+      span {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 160%;
+        color: #182f43;
+      }
+    }
+  }
+
+  .spanImg {
+    margin-right: 16px;
+  }
+
+  .features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+    text-align: left;
+
+    .featureItem {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 0.9375rem;
+      color: #374151;
+
+      svg {
+        margin-right: 8px;
+        font-size: 1.125rem;
+      }
+    }
+
+    .unavailable {
+      color: #9ca3af;
+
+      svg {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .button {
+    margin-top: auto;
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background: #2563eb;
+    }
+  }
+
+  /* Добавляем на мобилке (до 768px) горизонтальный скролл-слайдер и центрирование карточек */
+  /* Существующие у вас стили остаются без изменений */
+
+  .cards {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    /* при больших экранах карточки выровнены по центру */
+  }
+
+  /* Добавляем медиа-запрос для мобильных */
+  @media (max-width: 500px) {
+    .cards {
+      overflow-x: auto; /* включаем горизонтальный скролл */
+      -webkit-overflow-scrolling: touch; /* плавный скролл на iOS */
+      flex-wrap: nowrap; /* не переносить карточки на новую строку */
+      padding: 0 16px;
+      -ms-overflow-style: none; /* IE и Edge */
+      scrollbar-width: none; /* Firefox */ /* отступы справа/слева */
+    }
+    .cards::-webkit-scrollbar {
+      display: none;
+    }
+
+    .card {
+      flex: 0 0 80%; /* задаём базовую ширину карточки в 80% от контейнера */
+      min-width: 280px; /* и минимальную ширину, чтобы карточка не сжималась слишком сильно */
+    }
+  }
 }
