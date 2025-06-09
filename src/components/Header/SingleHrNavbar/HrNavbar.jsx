@@ -1,12 +1,17 @@
 // src/components/Header/SingleHrNavbar/HrNavbar.jsx
-import React from 'react';
-import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
-import styles from './HrNavbar.module.scss';
-import { navLogo } from '../../../utils/getImage';
+import React, { useState } from "react";
+import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
+import styles from "./HrNavbar.module.scss";
+import { navLogo } from "../../../utils/getImage";
+import { FiMenu, FiX } from "react-icons/fi";
 
 export default function HrNavbar() {
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const { pathname } = useLocation();
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   const scrollToSection = (id) => {
     const doScroll = () => {
@@ -17,11 +22,12 @@ export default function HrNavbar() {
       const bodyTop = document.body.getBoundingClientRect().top;
       const elemTop = el.getBoundingClientRect().top;
       const targetY = elemTop - bodyTop - offset;
-      window.scrollTo({ top: targetY, behavior: 'smooth' });
+      window.scrollTo({ top: targetY, behavior: "smooth" });
     };
 
-    if (pathname !== '/course') {
-      navigate('/courses', { replace: true });
+    closeMenu();
+    if (pathname !== "/course") {
+      navigate("/courses", { replace: true });
       setTimeout(doScroll, 100);
     } else {
       doScroll();
@@ -31,50 +37,129 @@ export default function HrNavbar() {
   return (
     <header className={styles.navbar}>
       <div className="container">
-        <div className={styles.navbarInner}>
-          <Link to="#"  onClick={(e) => { e.preventDefault(); scrollToSection('navbarHR'); }}  className={styles.logo}>
-            <img src={navLogo} alt="Ameen Group" />
-          </Link>
+        <div className={styles.burgerBox}>
+          <button className={styles.burger} onClick={toggleMenu}>
+            {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+          </button>
+          <div className={styles.navbarInner}>
+            <Link
+              to="#"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("navbarHR");
+              }}
+              className={styles.logo}
+            >
+              <img src={navLogo} alt="Ameen Group" />
+            </Link>
 
-          <nav className={styles.navLinks}>
+            <nav className={styles.navLinks}>
+              <NavLink
+                to="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("course-details");
+                }}
+              >
+                Kurs haqida qisqacha
+              </NavLink>
+              <NavLink
+                to="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("curriculum");
+                }}
+              >
+                Dastur
+              </NavLink>
+              <NavLink
+                to="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("teachers");
+                }}
+              >
+                Ustozlar
+              </NavLink>
+              <NavLink
+                to="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("pricing");
+                }}
+              >
+                Tariflar
+              </NavLink>
+              <NavLink
+                to="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("feedback");
+                }}
+              >
+                Fikrlar
+              </NavLink>
+            </nav>
+
+            
+          </div>
+          <div className={styles.actions}>
+              <Link to="/signup" className={styles.cta} onClick={closeMenu}>
+                Ro'yxatdan o'tish
+              </Link>
+            </div>
+        </div>
+
+        {isOpen && (
+          <div className={styles.mobileMenu}>
             <NavLink
               to="#"
-              onClick={(e) => { e.preventDefault(); scrollToSection('course-details'); }}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("course-details");
+              }}
             >
               Kurs haqida qisqacha
             </NavLink>
             <NavLink
               to="#"
-              onClick={(e) => { e.preventDefault(); scrollToSection('curriculum'); }}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("curriculum");
+              }}
             >
               Dastur
             </NavLink>
             <NavLink
               to="#"
-              onClick={(e) => { e.preventDefault(); scrollToSection('teachers'); }}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("teachers");
+              }}
             >
               Ustozlar
             </NavLink>
             <NavLink
               to="#"
-              onClick={(e) => { e.preventDefault(); scrollToSection('pricing'); }}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("pricing");
+              }}
             >
               Tariflar
             </NavLink>
             <NavLink
               to="#"
-              onClick={(e) => { e.preventDefault(); scrollToSection('feedback'); }}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("feedback");
+              }}
             >
               Fikrlar
             </NavLink>
-          </nav>
-
-          <div className={styles.actions}>
-            <Link to="/signup" className={styles.cta}>
-              Ro'yxatdan o'tish
-            </Link>
+         
           </div>
-        </div>
+        )}
       </div>
     </header>
   );

@@ -217,7 +217,8 @@
   .wrapper {
     padding-top: 50px;
     padding-bottom: 50px;
-    flex-direction: column;
+    
+
   
   }
 
@@ -296,6 +297,9 @@
   .imageBox {
     position: relative; // важно для абсолютного позиционирования плашки
     flex: 1;
+    max-width: 120px;
+    width: 100%;
+    
 
     img {
       max-width: 278px;
