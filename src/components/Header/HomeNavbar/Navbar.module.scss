@@ -210,3 +210,48 @@
     }
   }
 }
+@media (max-width: 400px) {
+  .navLinks,
+  .actions {
+    display: none;
+  }
+
+  .navbarInner {
+    gap: 30px;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .mobileMenu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px 16px;
+    gap: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    z-index: 998;
+
+    a {
+      font-family: var(--font-family);
+      font-weight: 600;
+      font-size: 16px;
+      color: #1a1a18;
+      text-decoration: none;
+
+      &:hover {
+        color: var(--primary);
+      }
+    }
+  }
+
+  .cta {
+    width: 100px;
+    font-size: 13px;
+  }
+}

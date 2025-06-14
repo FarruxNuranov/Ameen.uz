@@ -210,6 +210,75 @@
     }
   }
 }
+@media (max-width: 800px) {
+
+
+  .wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+ display: flex;
+ flex-direction: column;
+  }
+
+  .imageBox {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    img {
+      width: 100%;
+
+
+    }
+
+    .notification {
+      position: absolute;
+      top: auto;
+      bottom: 20px;
+      left: 70%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: auto;
+      padding: 8px 12px;
+      gap: 8px;
+    }
+
+    .logo {
+      width: 24px;
+      height: 24px;
+    }
+
+    .text {
+      .title {
+        font-size: 14px;
+      }
+
+      .subtitle {
+        font-size: 11px;
+      }
+    }
+  }
+
+  .infoBox {
+   text-align: center;
+
+    .title {
+      font-size: 26px;
+    }
+
+    .text {
+      font-size: 15px;
+      margin-top: 16px;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+}
 
 @media (max-width: 500px) {
 
@@ -300,12 +369,12 @@
   .imageBox {
     position: relative; // важно для абсолютного позиционирования плашки
     flex: 1;
-    max-width: 120px;
+    max-width: 278px;
     width: 100%;
     
 
     img {
-      max-width: 278px;
+      max-width: 100%;
       
     
       border-radius: 12px;

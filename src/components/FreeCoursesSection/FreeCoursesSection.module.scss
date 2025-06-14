@@ -202,3 +202,24 @@ cursor: pointer;
 
   
 }
+@media (max-width: 400px) {
+  .card {
+    width: 100%;
+    max-width: 200px;
+    height: 299px;
+    margin: none;
+  }
+
+  .swiper {
+    padding: 0;
+
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+ 
+
+
+  
+}
