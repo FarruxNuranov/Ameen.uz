@@ -98,6 +98,10 @@ h1 {
     width: 184px;
     height: 56px;
     border: none;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
       background-color: #ffffffb4;
@@ -219,14 +223,13 @@ h1 {
     background-size: cover;
     background-position: 15% center;
 
-
-      &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(80deg, #000046 30%, rgba(43, 50, 178, 0) 70%);
-    z-index: 1;
-  }
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(80deg, #000046 30%, rgba(43, 50, 178, 0) 70%);
+      z-index: 1;
+    }
   }
 
   .content {
@@ -234,8 +237,6 @@ h1 {
     padding: 20px 0;
     gap: 25px;
     justify-content: start;
-     
-    
   }
 
   .label {
@@ -282,7 +283,6 @@ h1 {
   }
 
   .buttons {
-
     width: 224px;
     align-items: start;
     .primary {
@@ -290,6 +290,7 @@ h1 {
       padding: 14px 16px;
       width: 184px;
       height: 56px;
+      background: #fff;
     }
 
     .secondary {
@@ -316,7 +317,6 @@ h1 {
     flex-direction: column;
     align-self: start;
     justify-content: start;
-   
   }
 
   .playmini {

@@ -8,6 +8,7 @@ import {
 } from 'react-icons/fi';
 import styles from './CourseCurriculumSection.module.scss';
 import { failmini, playmini } from '../../utils/getImage';
+import { Link } from 'react-router-dom';
 
 const curriculum = [
   {
@@ -104,7 +105,7 @@ export default function CourseCurriculumSection() {
               <span>80 % kurs — amaliyot</span>
             </li>
           </ul>
-          <button className={styles.button}>Ro‘yxatdan o‘tish</button>
+          <Link to="https://eduameenuz.netlify.app/register" target="_blank"  className={styles.button}>Ro‘yxatdan o‘tish</Link>
         </div>
 
         <div className={styles.divider} />

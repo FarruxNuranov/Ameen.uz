@@ -65,7 +65,7 @@ export default function Navbar() {
           </nav>
 
           {/* Кнопка */}
-          <Link onClick={SignUp} to="#" className={styles.cta}>
+          <Link  to="https://eduameenuz.netlify.app/register" target="_blank" className={styles.cta}>
             Ro'yxatdan o'tish
           </Link>
         </div>

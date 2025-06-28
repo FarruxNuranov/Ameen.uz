@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './HeroSection.module.scss';
 import { heroBackground, Play,  } from '../../utils/getImage';
+import { Link } from 'react-router-dom';
 
 export default function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -35,7 +36,7 @@ export default function HeroSection() {
               Kompaniyada HR tizimini joriy qilib, yuqori samaraga olib chiqishni istagan biznes egalari uchun
             </p>
             <div className={styles.buttons}>
-              <button className={styles.primary}>Ro’yxatdan o’tish</button>
+              <Link to="https://eduameenuz.netlify.app/register" target="_blank"  className={styles.primary}>Ro’yxatdan o’tish</Link>
               <button
                 className={styles.secondary}
                 onClick={() => setIsModalOpen(true)}

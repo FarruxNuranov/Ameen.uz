@@ -101,7 +101,12 @@ export default function HrNavbar() {
               </NavLink>
             </nav>
             <div className={styles.actions}>
-              <Link to="/signup" className={styles.cta} onClick={closeMenu}>
+              <Link
+                to="https://eduameenuz.netlify.app/register"
+                target="_blank"
+                className={styles.cta}
+                onClick={closeMenu}
+              >
                 Ro'yxatdan o'tish
               </Link>
             </div>

@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './HRCourseSection.module.scss';
 import {  PlayButton, RQ1, RQ2, RQ3, RQ4 } from '../../utils/getImage';
+import { Link } from 'react-router-dom';
 
 // Replace these imports with your actual images
 
@@ -19,7 +20,7 @@ export default function HRCourseSection() {
             <p className={styles.desc}>
               HR professional kurslarining barcha qismlarini bitta to‘plamda, ancha qulayroq narxda harid qiling va qo‘shimcha sovg‘alarga ega bo‘ling!
             </p>
-            <button className={styles.button}>Ro’yxatdan o’tish</button>
+            <Link to="https://eduameenuz.netlify.app/register" target="_blank"  className={styles.button}>Ro’yxatdan o’tish</Link>
           </div>
 
           <div className={styles.imageGrid}>
