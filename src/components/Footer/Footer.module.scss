@@ -1,206 +1,93 @@
 .footer {
-  background: #f3f7fb;
-  padding: 60px 0 40px;
-  font-family: var(--font-family);
+  padding: 40px 0;
+  background: #fff;
+
+  font-family: sans-serif;
 
   .top {
     display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    max-width: 1240px;
-    margin: 0 auto 40px;
-    padding: 0 15px;
-  }
-
-  .brand {
-    flex: 0 0 ;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #0a142f;
 
     .logo {
-      width: 188px;
-      height: 88px;
-      margin-bottom: 24px;
+      width: 150px;
+      cursor: pointer;
     }
 
-    .subscribe {
+    .socialIcons {
       display: flex;
-      width: 100%;
-      margin-bottom: 12px;
+      gap: 16px;
 
-      .input {
-        width: 180px;
-        height: 40px;
-        flex: 1;
-        padding: 10px 14px;
-        border-radius: 8px 0 0 8px;
-        border: 1px solid #ccc;
-        font-size: 14px;
-        outline: none;
-      }
-
-      .button {
-        border-top-right-radius: 8px;
-        border-bottom-right-radius: 8px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 14px 16px;
-        width: 95px;
-        height: 40px;
-        background: var(--primary);
-        border: none;
-        font-family: var(--font-family);
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 143%;
-        letter-spacing: 0.01em;
-        text-align: center;
-        color: #fff;
+      img {
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        transition: transform 0.3s;
 
         &:hover {
-          background: #090c3b;
+          transform: scale(1.1);
         }
       }
-    }
-
-    .note {
-      font-family: var(--font-family);
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 133%;
-      color: #97999d;
     }
   }
 
-  .column {
-    flex: 1;
-    min-width: 180px;
+  .linkBox {
+    display: flex;
+    justify-content: space-between;
+  }
 
-    h4 {
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin: 48px 0;
+
+    a {
       font-family: var(--font-family);
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 156%;
-      color: #182f43;
-      margin-bottom: 17px;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: -0.01em;
+      color: var(--primary);
+      cursor: pointer;
 
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-
-      li {
-        margin-bottom: 8px;
-        display: flex;
-        align-items: center;
-        font-family: var(--font-family);
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 160%;
-        color: #182f43;
-
-        a {
-          font-family: var(--font-family);
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 150%;
-          letter-spacing: 0.01em;
-          color: #182f43;
-
-          &:hover {
-            color: #0b0e4e;
-          }
-        }
-
-        .icon {
-          margin-right: 8px;
-          color: #0b0e4e;
-        }
+      &:hover {
+        text-decoration: underline;
       }
-    }
-
-    &.contactList li {
-      margin-bottom: 16px;
     }
   }
 
   .bottom {
-    border-top: 1px solid #ddd;
-    padding-top: 16px;
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 0 15px 16px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding-top: 9px;
+   
+    font-size: 13px;
+    color: #555;
 
-    p {
-      font-size: 13px;
-      color: #777;
-    }
-
-    .social {
+    .legal {
       display: flex;
-      gap: 16px;
-
+      gap: 20px;
 
       a {
         color: #555;
-        font-size: 18px;
-        transition: color 0.3s;
+        text-decoration: none;
 
         &:hover {
-          color: #0b0e4e;
+          text-decoration: underline;
         }
       }
     }
   }
 }
 
-/* Адаптив */
-@media (max-width: 500px) {
-  .footer {
-    .top {
-      justify-content: start;
-      text-align: start;
-      flex-direction: column;
 
-      .brand {
-        align-items: start;
-
-        .button {
-          display: none;
-        }
-
-        .note {
-          display: none;
-        }
-        
-      }
-
-      .input{
-        display: none;
-      }
-
-     
-
-      .column {
-        min-width: 140px;
-        justify-items: start;
-      }
+@media (max-width:500px) {
+   .bottom {
+    
+    .legal {
+      text-align: center;
     }
-
-    .bottom {
-      flex-direction: column;
-      gap: 12px;
-      align-items: start;
-    }
-  }
+   }
 }
