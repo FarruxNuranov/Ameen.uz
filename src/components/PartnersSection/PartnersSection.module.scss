@@ -42,41 +42,25 @@
     margin-bottom: 32px;
   }
 
- 
   .sliderContainer {
     overflow: hidden;
     width: 100%;
    
-    padding: 20px 0;
+    height: 200px;
     position: relative;
-    background-color: #f3f7fb; 
+    background-color: #f3f7fb;
     border-radius: 12px;
-  }
-
-  .sliderTrack {
+    
     display: flex;
-    padding:80px 0;
-    gap: 83px;
-
-    animation: scroll-left 20s linear infinite;
-  }
-
-  
-  @keyframes scroll-left {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
+    gap: 32px;  
   }
 
   .logoBox {
-    flex: 0 0 auto; 
+    flex: 0 0 auto;
+    margin: 0 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 40px; 
 
     img {
       max-height: 48px;
@@ -86,7 +70,6 @@
     }
   }
 }
-
 
 @media (max-width: 900px) {
   .partners {
@@ -106,10 +89,6 @@
     }
     .logoBox {
       margin: 0 16px;
-    }
-
-    .sliderTrack {
-      gap: 32px;
     }
   }
 }
