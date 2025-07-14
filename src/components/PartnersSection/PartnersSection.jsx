@@ -14,9 +14,9 @@ export default function PartnersSection() {
 
       <div className={styles.sliderContainer}>
         <Marquee
-          gradient={false}
+          gradient={true}
           speed={50}
-          pauseOnHover={true}
+          // pauseOnHover={true}
           direction="left"
         >
           {partners.concat(partners).map((logo, idx) => (
