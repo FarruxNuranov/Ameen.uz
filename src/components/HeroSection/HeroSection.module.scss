@@ -1,5 +1,6 @@
 /* src/components/HeroSection/HeroSection.module.scss */
 .hero {
+  background: url("../../assets/Image/hero/hero4.jpg");
   position: relative;
   background-size: cover;
   background-position: center;
@@ -153,9 +154,6 @@ h1 {
   font-size: 14px;
 }
 
-/* ==========================
-   Стили модального окна
-   ========================== */
 .modalOverlay {
   position: fixed;
   inset: 0;
@@ -170,7 +168,7 @@ h1 {
   position: relative;
   width: 90%;
   max-width: 800px;
-  background-color: #000; /* фон за iframe */
+  background-color: #000;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
@@ -219,15 +217,22 @@ h1 {
   }
 
   .hero {
+    margin-top: 60px;
+    background: url("../../assets/IMG_1407.webp");
     min-height: 100vh;
+    position: relative;
     background-size: cover;
-    background-position: 15% center;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    overflow: hidden;
 
     &::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(80deg, #000046 30%, rgba(43, 50, 178, 0) 70%);
+      background: linear-gradient(80deg, #000046 10%, rgba(43, 50, 178, 0) 50%);
       z-index: 1;
     }
   }
