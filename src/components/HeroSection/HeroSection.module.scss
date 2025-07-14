@@ -1,13 +1,14 @@
 /* src/components/HeroSection/HeroSection.module.scss */
 .hero {
-  background: url("../../assets/Image/hero/hero4.jpg");
-  position: relative;
+  background: url("../../assets/Frame 1.webp");
   background-size: cover;
-  background-position: center;
+  
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   overflow: hidden;
+  margin-top: 60px;
 
   &::before {
     content: "";
